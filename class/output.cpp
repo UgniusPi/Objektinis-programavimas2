@@ -34,37 +34,8 @@ void isvestEkr(const vector<Studentas> &studentai, int pasirink) {
 }
 
 void skaicGal(vector<Studentas> &studentai, int pasirink) {
-    if (pasirink == 1) {
-        for (auto &stud : studentai) {
-            int suma = 0;
-            double vid = 0;
-            
-            for (int paz : stud.getTarp()) {
-                suma += paz;
-            }
-            
-            if (stud.getTarp().size() != 0) {
-                vid = (double)suma / stud.getTarp().size();    
-            }
-            stud.setGal(vid * 0.4 + (double)stud.getEgz() * 0.6);   
-        }
-    }
-    else if (pasirink == 2) {
-        for (auto &stud : studentai) {
-            double med = 0;
-            
-            if (stud.getTarp().size() != 0) {
-                auto tmp = stud.getTarp();
-                sort(tmp.begin(), tmp.end());
-
-                size_t medIndex = tmp.size() / 2;
-                if (tmp.size() % 2 == 1) {
-                    med = tmp.at(medIndex);
-                }
-            }
-            
-            stud.setGal(med * 0.4 + (double)stud.getEgz() * 0.6);   
-        }   
+    for (auto &stud : studentai) {
+        stud.setGal(stud.galBalas(pasirink));
     }
 }
 

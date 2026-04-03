@@ -31,7 +31,7 @@ public:
     inline void setGal(double g) { gal_ = g; }
     istream& readStudent(istream&);
 
-    double galBalas(int pasirinkimas) const;
+    double galBalas(int pasirink);
 };
 
 bool compare(const Studentas&, const Studentas&);
