@@ -27,8 +27,8 @@ void isvestEkr(const vector<Studentas> &studentai, int pasirink) {
     cout << left << setw(21) << "Pavarde" << left << setw(16) << "Vardas" << left << setw(20) << galTekstas << "\n";
     cout << "---------------------------------------------------------" << "\n";
     
-    for (auto stud : studentai) {
-        cout << left << setw(21) << stud.pav << left << setw(16) << stud.vard << left << setw(20) << fixed << setprecision(2) << stud.gal << "\n";
+    for (const auto &stud : studentai) {
+        cout << left << setw(21) << stud.getPav() << left << setw(16) << stud.getVard() << left << setw(20) << fixed << setprecision(2) << stud.getGal() << "\n";
     }
     cout << "\n\n";
 }
@@ -39,34 +39,31 @@ void skaicGal(vector<Studentas> &studentai, int pasirink) {
             int suma = 0;
             double vid = 0;
             
-            for (int paz : stud.tarp) {
+            for (int paz : stud.getTarp()) {
                 suma += paz;
             }
             
-            if (stud.tarp.size() != 0) {
-                vid = (double)suma / stud.tarp.size();   
+            if (stud.getTarp().size() != 0) {
+                vid = (double)suma / stud.getTarp().size();    
             }
-            stud.gal = vid * 0.4 + (double)stud.egz * 0.6;   
+            stud.setGal(vid * 0.4 + (double)stud.getEgz() * 0.6);   
         }
     }
     else if (pasirink == 2) {
         for (auto &stud : studentai) {
             double med = 0;
             
-            if (stud.tarp.size() != 0) {
-                sort(stud.tarp.begin(),stud.tarp.end());
-                
-                int medIndex;
-                medIndex = stud.tarp.size() / 2;
-                if (stud.tarp.size() % 2 == 1) {
-                    med = stud.tarp.at(medIndex);
-                }
-                else {
-                    med = (double)(stud.tarp.at(medIndex) + stud.tarp.at(medIndex - 1)) / 2;
+            if (stud.getTarp().size() != 0) {
+                auto tmp = stud.getTarp();
+                sort(tmp.begin(), tmp.end());
+
+                size_t medIndex = tmp.size() / 2;
+                if (tmp.size() % 2 == 1) {
+                    med = tmp.at(medIndex);
                 }
             }
             
-            stud.gal = med * 0.4 + (double)stud.egz * 0.6;   
+            stud.setGal(med * 0.4 + (double)stud.getEgz() * 0.6);   
         }   
     }
 }
@@ -92,23 +89,23 @@ void isvestIFaila(const vector<Studentas> &studentai, int pasirink, string failo
     file << left << setw(21) << "Pavarde" << left << setw(16) << "Vardas" << left << setw(20) << galTekstas << "\n";
     file << "---------------------------------------------------------";
     
-    for (auto stud : studentai) {
-        file << "\n" << left << setw(21) << stud.pav << left << setw(16) << stud.vard << left << setw(20) << fixed << setprecision(2) << stud.gal;
+    for (const auto &stud : studentai) {
+        file << "\n" << left << setw(21) << stud.getPav() << left << setw(16) << stud.getVard() << left << setw(20) << fixed << setprecision(2) << stud.getGal();
     }
 }
 
 void rusiuok(vector<Studentas> &studentai, int rusBudas) {
     if (rusBudas == 1) {
         sort(studentai.begin(), studentai.end(),
-            [](const Studentas &a, const Studentas &b) { return a.vard < b.vard; });
+            [](const Studentas &a, const Studentas &b) { return a.getVard() < b.getVard(); });
     }
     else if (rusBudas == 2) {
         sort(studentai.begin(), studentai.end(),
-            [](const Studentas &a, const Studentas &b) { return a.pav < b.pav; });
+            [](const Studentas &a, const Studentas &b) { return a.getPav() < b.getPav(); });
     }
     else {
         sort(studentai.begin(), studentai.end(),
-            [](const Studentas &a, const Studentas &b) { return a.gal > b.gal; });
+            [](const Studentas &a, const Studentas &b) { return a.getGal() > b.getGal(); });
     }
 }
 
@@ -137,7 +134,7 @@ string kurkFaila(int studSk, int pazSk) {
 }
 
 void skirstyk(vector<Studentas> &studentai, vector<Studentas> &vargsiukai) {
-    auto mid = std::stable_partition(studentai.begin(), studentai.end(), [](const Studentas &s){ return s.gal < 5; });
+    auto mid = std::stable_partition(studentai.begin(), studentai.end(), [](const Studentas &s){ return s.getGal() < 5; });
 
     vargsiukai.assign(studentai.begin(), mid);
     studentai.erase(studentai.begin(), mid);

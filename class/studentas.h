@@ -3,6 +3,7 @@
 
 using std::string;
 using std::vector;
+using std::istream;
 
 class Studentas {
 private:
@@ -13,6 +14,7 @@ private:
     double gal_;
 public:
     Studentas() : vard_("Nenurodyta"), pav_("Nenurodyta"), egz_(0), gal_(0) { }
+    Studentas(istream& is);
 
     inline string getVard() const { return vard_; }
     inline string getPav() const { return pav_; }
@@ -27,6 +29,11 @@ public:
     inline void clearTarp() { tarp_.clear(); }
     inline void setEgz(int e) { egz_ = e; }
     inline void setGal(double g) { gal_ = g; }
+    istream& readStudent(istream&);
 
     double galBalas(int pasirinkimas) const;
 };
+
+bool compare(const Studentas&, const Studentas&);
+bool comparePagalPavarde(const Studentas&, const Studentas&);
+bool comparePagalEgza(const Studentas&, const Studentas&);

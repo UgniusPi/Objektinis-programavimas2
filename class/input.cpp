@@ -32,14 +32,13 @@ void ivestEkr(vector<Studentas> &studentai, bool rndPaz, bool rndVard) {
             int tarpSk;
             
             if (rndVard) {
-                naujasStud.vard = rndVardas(4, 10);
-                naujasStud.pav = rndVardas(6, 12);
+                naujasStud.setVard(rndVardas(4, 10));
+                naujasStud.setPav(rndVardas(6, 12));
                 cout << "Automatiskai sugeneruoto " << to_string(i + 1) << " is " << to_string(studSk) << " studento vardas ir pavarde:\n";
-                cout << left << setw(16) << naujasStud.vard << left << setw(20) << naujasStud.pav << "\n";
-            }
+                cout << left << setw(16) << naujasStud.getVard() << left << setw(20) << naujasStud.getPav() << "\n";            }
             else {
-                naujasStud.vard = validLength(15, "Iveskite " + to_string(i + 1) + " is " + to_string(studSk) + " studento varda (iki 15 raidziu): ");
-                naujasStud.pav = validLength(20, "Iveskite " + to_string(i + 1) + " is " + to_string(studSk) + " studento pavarde (iki 20 raidziu): ");
+                naujasStud.setVard(validLength(15, "Iveskite " + to_string(i + 1) + " is " + to_string(studSk) + " studento varda (iki 15 raidziu): "));
+                naujasStud.setPav(validLength(20, "Iveskite " + to_string(i + 1) + " is " + to_string(studSk) + " studento pavarde (iki 20 raidziu): "));
             }
     
             if (rndPaz) {
@@ -47,21 +46,21 @@ void ivestEkr(vector<Studentas> &studentai, bool rndPaz, bool rndVard) {
                 cout << "Automatiskai sugeneruoti tarpiniai pazymiai ir egzamino rezultatas:\n";
                 for (int j=0; j<tarpSk; j++) {
                     int tarpPaz = rand() % 11;
-                    naujasStud.tarp.push_back(tarpPaz);
+                    naujasStud.addTarp(tarpPaz);
                     cout << tarpPaz << " ";
                 }
                 
-                naujasStud.egz = rand() % 11;
-                cout << "\n" << naujasStud.egz << "\n\n";
+                naujasStud.setEgz(rand() % 11);
+                cout << "\n" << naujasStud.getEgz() << "\n\n";
             }
             else {
                 tarpSk = validInput("Iveskite tarpiniu pazymiu skaiciu: ");
                 for (int j=0; j<tarpSk; j++) {
                     int tarpPaz = validRange(0, 10, "Iveskite " + to_string(j + 1) + " pazymi is " + to_string(tarpSk) + ": ");
-                    naujasStud.tarp.push_back(tarpPaz);
+                    naujasStud.addTarp(tarpPaz);
                 }
                 
-                naujasStud.egz = validInput("Iveskite egzamino rezultata: ");
+                naujasStud.setEgz(validInput("Iveskite egzamino rezultata: "));
                 cout << "\n";
             }
             
@@ -199,14 +198,14 @@ void ivestIsFailo(vector<Studentas> &studentai, string failoKelias,  bool &klaid
         string tmp;
 
         if (ss >> tmp) {
-            naujasStud.vard = tmp;
+            naujasStud.setVard(tmp);
         }
         else {
             continue;
         }
 
         if (ss >> tmp) {
-            naujasStud.pav = tmp;
+            naujasStud.setPav(tmp);
         }
         else {
             cout << "Klaidingi duomenys faile!";
@@ -231,9 +230,9 @@ void ivestIsFailo(vector<Studentas> &studentai, string failoKelias,  bool &klaid
             return;
         }
 
-        naujasStud.egz = visiPaz.back();
+        naujasStud.setEgz(visiPaz.back());
         visiPaz.pop_back();
-        naujasStud.tarp = visiPaz;
+        naujasStud.setTarp(visiPaz);
 
         studentai.push_back(naujasStud);
     }

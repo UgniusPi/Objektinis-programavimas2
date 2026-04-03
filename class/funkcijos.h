@@ -1,6 +1,7 @@
 #include <vector>
 #include <string>
 #include "strukturos.h"
+#include "studentas.h"
 
 using std::string;
 using std::vector;
