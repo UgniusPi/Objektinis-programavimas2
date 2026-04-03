@@ -58,3 +58,38 @@ Studentu skirstymas i grupes uztruko: 0.0302243
 
 1000000:
 Studentu skirstymas i grupes uztruko: 0.274792
+
+
+
+Struct ir Vector:
+
+
+-O1:
+Exe failo dydis: 197KB
+
+100000:
+Studentu skirstymas i grupes uztruko: 0.0162531
+
+1000000:
+Studentu skirstymas i grupes uztruko: 0.168725
+
+
+-O2:
+Exe failo dydis: 201KB
+
+100000:
+Studentu skirstymas i grupes uztruko: 0.0160056
+
+1000000:
+Studentu skirstymas i grupes uztruko: 0.169638
+
+
+-O3:
+Exe failo dydis: 250KB
+
+100000:
+Studentu skirstymas i grupes uztruko: 0.0159979
+
+1000000:
+Studentu skirstymas i grupes uztruko: 0.167737
+
