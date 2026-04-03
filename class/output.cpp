@@ -73,7 +73,7 @@ void rusiuok(vector<Studentas> &studentai, int rusBudas) {
         sort(studentai.begin(), studentai.end(), comparePagalPavarde);
     }
     else {
-        sort(studentai.begin(), studentai.end(), comparePagalEgza);
+        sort(studentai.begin(), studentai.end(), comparePagalGal);
     }
 }
 

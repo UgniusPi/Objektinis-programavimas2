@@ -6,6 +6,10 @@ Studentas::Studentas(std::istream& is) {
     readStudent(is);
 }
 
+Studentas::~Studentas() {
+    // no special cleanup required (kept for clarity and future extension)
+}
+
 std::istream& Studentas::readStudent(std::istream& is) {
     if (!(is >> vard_)) return is;
     if (!(is >> pav_)) return is;

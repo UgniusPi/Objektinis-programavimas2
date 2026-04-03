@@ -15,6 +15,7 @@ private:
 public:
     Studentas() : vard_("Nenurodyta"), pav_("Nenurodyta"), egz_(0), gal_(0) { }
     Studentas(istream& is);
+    ~Studentas();
 
     inline string getVard() const { return vard_; }
     inline string getPav() const { return pav_; }
