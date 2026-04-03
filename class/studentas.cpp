@@ -7,7 +7,6 @@ Studentas::Studentas(std::istream& is) {
 }
 
 Studentas::~Studentas() {
-    // no special cleanup required (kept for clarity and future extension)
 }
 
 std::istream& Studentas::readStudent(std::istream& is) {
