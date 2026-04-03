@@ -67,16 +67,13 @@ void isvestIFaila(const vector<Studentas> &studentai, int pasirink, string failo
 
 void rusiuok(vector<Studentas> &studentai, int rusBudas) {
     if (rusBudas == 1) {
-        sort(studentai.begin(), studentai.end(),
-            [](const Studentas &a, const Studentas &b) { return a.getVard() < b.getVard(); });
+        sort(studentai.begin(), studentai.end(), compare);
     }
     else if (rusBudas == 2) {
-        sort(studentai.begin(), studentai.end(),
-            [](const Studentas &a, const Studentas &b) { return a.getPav() < b.getPav(); });
+        sort(studentai.begin(), studentai.end(), comparePagalPavarde);
     }
     else {
-        sort(studentai.begin(), studentai.end(),
-            [](const Studentas &a, const Studentas &b) { return a.getGal() > b.getGal(); });
+        sort(studentai.begin(), studentai.end(), comparePagalEgza);
     }
 }
 

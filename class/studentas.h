@@ -36,4 +36,4 @@ public:
 
 bool compare(const Studentas&, const Studentas&);
 bool comparePagalPavarde(const Studentas&, const Studentas&);
-bool comparePagalEgza(const Studentas&, const Studentas&);
+bool comparePagalGal(const Studentas&, const Studentas&);

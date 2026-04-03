@@ -58,6 +58,6 @@ bool comparePagalPavarde(const Studentas &a, const Studentas &b) {
     return a.getPav() < b.getPav();
 }
 
-bool comparePagalEgza(const Studentas &a, const Studentas &b) {
+bool comparePagalGal(const Studentas &a, const Studentas &b) {
     return a.getGal() > b.getGal();
 }
