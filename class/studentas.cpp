@@ -89,6 +89,10 @@ double Studentas::galBalas(int pasirink) {
     return med * 0.4 + (double)egz_ * 0.6;
 }
 
+std::istream& operator>>(std::istream& is, Studentas& s) {
+    return s.readStudent(is);
+}
+
 std::ostream& operator<<(std::ostream& os, const Studentas& s) {
     os << s.vard_ << " " << s.pav_;
     for (const auto &p : s.tarp_) os << " " << p;

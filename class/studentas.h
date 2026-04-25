@@ -39,7 +39,8 @@ public:
     istream& readStudent(istream&);
 
     double galBalas(int pasirink);
-    friend ostream& operator<<(std::ostream& os, const Studentas& s);
+    friend istream& operator>>(istream& is, Studentas& s);
+    friend ostream& operator<<(ostream& os, const Studentas& s);
 };
 
 bool compare(const Studentas&, const Studentas&);

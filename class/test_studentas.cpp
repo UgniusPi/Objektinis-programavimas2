@@ -34,4 +34,17 @@ int main() {
     e = std::move(b);
     cout << "e: " << e << endl;
     cout << "b after move assign: " << b << endl;
+
+    cout << "--- istream operator>> test ---" << endl;
+    std::istringstream iss("Petras Petraitis 6 7 8 9");
+    Studentas f;
+    iss >> f;
+    cout << "f: " << f << endl;
+
+    cout << "--- ostream operator<< test ---" << endl;
+    std::ostringstream oss;
+    oss << f;
+    cout << "oss.str(): " << oss.str() << endl;
+
+    return 0;
 }
