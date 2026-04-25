@@ -53,23 +53,44 @@ Studentas::~Studentas() {
 }
 
 std::istream& Studentas::readStudent(std::istream& is) {
-    if (!(is >> vard_)) return is;
-    if (!(is >> pav_)) return is;
+    std::string line;
+    if (!std::getline(is, line)) {
+        is.setstate(std::ios::failbit);
+        return is;
+    }
+
+    if (line.empty()) {
+        is.setstate(std::ios::failbit);
+        return is;
+    }
+
+    std::istringstream iss(line);
+    std::string vard, pav;
+    if (!(iss >> vard >> pav)) {
+        is.setstate(std::ios::failbit);
+        return is;
+    }
 
     std::vector<int> paz;
     int val;
-    while (is >> val) {
+    while (iss >> val) {
+        if (val < 0 || val > 10) {
+            is.setstate(std::ios::failbit);
+            return is;
+        }
         paz.push_back(val);
     }
 
-    if (!paz.empty()) {
-        egz_ = paz.back();
-        paz.pop_back();
-        tarp_ = paz;
-    } else {
-        egz_ = 0;
-        tarp_.clear();
+    if (paz.empty()) {
+        is.setstate(std::ios::failbit);
+        return is;
     }
+
+    vard_ = vard;
+    pav_ = pav;
+    egz_ = paz.back();
+    paz.pop_back();
+    tarp_ = paz;
 
     return is;
 }

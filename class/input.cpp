@@ -190,52 +190,21 @@ void ivestIsFailo(vector<Studentas> &studentai, string failoKelias,  bool &klaid
         return;
     }
 
-    buffer << file.rdbuf();  
+    buffer << file.rdbuf();
 
-    getline(buffer, line);
+    // skip header line (if present)
+    if (!getline(buffer, line)) return;
     while (getline(buffer, line)) {
         stringstream ss(line);
         Studentas naujasStud;
-        string tmp;
 
-        if (ss >> tmp) {
-            naujasStud.setVard(tmp);
-        }
-        else {
-            continue;
-        }
-
-        if (ss >> tmp) {
-            naujasStud.setPav(tmp);
-        }
-        else {
+        if (ss >> naujasStud) {
+            studentai.push_back(std::move(naujasStud));
+        } else {
             cout << "Klaidingi duomenys faile!";
             klaida = true;
             return;
         }
-
-        vector<int> visiPaz;
-        while (ss >> tmp) {
-            if (!isInt(tmp)) {
-                cout << "Klaidingi duomenys faile!";
-                klaida = true;
-                return;   
-            }
-            int tmpPaz = stoi(tmp);
-            visiPaz.push_back(tmpPaz);
-        }
-
-        if (visiPaz.empty()) {
-            cout << "Klaidingi duomenys faile!";
-            klaida = true;
-            return;
-        }
-
-        naujasStud.setEgz(visiPaz.back());
-        visiPaz.pop_back();
-        naujasStud.setTarp(visiPaz);
-
-        studentai.push_back(std::move(naujasStud));
     }
 }
 

@@ -28,7 +28,7 @@ void isvestEkr(const vector<Studentas> &studentai, int pasirink) {
     cout << "---------------------------------------------------------" << "\n";
     
     for (const auto &stud : studentai) {
-        cout << left << setw(21) << stud.getPav() << left << setw(16) << stud.getVard() << left << setw(20) << fixed << setprecision(2) << stud.getGal() << "\n";
+        cout << stud << '\n';
     }
     cout << "\n\n";
 }
@@ -60,7 +60,7 @@ void isvestIFaila(const vector<Studentas> &studentai, int pasirink, string failo
     file << left << setw(21) << "Pavarde" << left << setw(16) << "Vardas" << left << setw(20) << galTekstas << "\n";
     file << "---------------------------------------------------------";
     
-    for (const auto stud : studentai) {
+    for (const auto &stud : studentai) {
         file << '\n' << stud;
     }
 }

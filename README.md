@@ -1,95 +1,36 @@
-Studentų skirstymo į grupes laiko tyrimas:
+**Rule of Five — perdengti metodai**
+
+| Metodas | Parašas | Paskirtis |
+|---|---|---|
+| Konstrukcija (numatytasis) | `Studentas()` | Sukuria objektą su `vard="Nenurodyta"`, `pav="Nenurodyta"`. |
+| Konstruoti iš srauto | `Studentas(std::istream&)` | Skaito vieną įrašo eilutę per `readStudent` (naudojamas `operator>>`). |
+| Kopijavimo konstruktorius | `Studentas(const Studentas&)` | Atlieka gilų kopijavimą (`std::string`, `std::vector`). |
+| Kopijavimo priskyrimas | `Studentas& operator=(const Studentas&)` | Priskiria reikšmes (saugaus self-assignment). |
+| Perkėlimo konstruktorius | `Studentas(Studentas&&) noexcept` | Efektyviai perkelia resursus (strings/vectors). |
+| Perkėlimo priskyrimas | `Studentas& operator=(Studentas&&) noexcept` | Efektyviai perkelia resursus priskiriant. |
+| Destruktorius | `~Studentas()` | Atlaisvina/užbaigia objektą; klasėje papildomai loguojama (debug). |
+| Srautų operatoriai | `operator>>` / `operator<<` | Leidžia patogiai skaityti/rašyti vieną studento įrašą kaip tekstą. |
+
+![alt text](image-1.png)
 
 
+Iš failo duomenims skaityti naudojama funkcija *ivestIsFailo*, kurioje naudojamas perdengtas operatorius >>
 
-Class ir Vector:
+**ss >> naujasStud**
 
-100000:
-Studentu skirstymas i grupes uztruko: 0.0742179
+Rankiniu būdu įvesti duomenims, automatiškai generuoti naudojama funkcija *ivestEkr*. 
 
-1000000:
-Studentu skirstymas i grupes uztruko: 0.769601
+Abiejose iš jų naujo studento pridėjimui naudojamas move konstruktorius: 
 
+**studentai.push_back(std::move(naujasStud));** 
 
+Studentų išvedimui į ekraną naudojama funkcija *isvestEkr*.
 
-Struct ir Vector:
+Studentų išsaugojimui faile naudojama funkcija *isvestIFaila*.
 
-100000:
-Studentu skirstymas i grupes uztruko: 0.0662698
+Abiejose naudojamas perdengtas operatorius <<
 
-1000000:
-Studentu skirstymas i grupes uztruko: 0.656384
+**cout << stud << '\n';**
 
-
-
-
-Optimizavimo flag'ų tyrimas:
-
-
-
-Class ir Vector:
-
-
--O1:
-Exe failo dydis: 180KB
-
-100000:
-Studentu skirstymas i grupes uztruko: 0.0296503
-
-1000000:
-Studentu skirstymas i grupes uztruko: 0.282759
-
-
--O2:
-Exe failo dydis: 181KB
-
-100000:
-Studentu skirstymas i grupes uztruko: 0.028363
-
-1000000:
-Studentu skirstymas i grupes uztruko: 0.279498
-
-
--O3:
-Exe failo dydis: 188KB
-
-100000:
-Studentu skirstymas i grupes uztruko: 0.0302243
-
-1000000:
-Studentu skirstymas i grupes uztruko: 0.274792
-
-
-
-Struct ir Vector:
-
-
--O1:
-Exe failo dydis: 197KB
-
-100000:
-Studentu skirstymas i grupes uztruko: 0.0162531
-
-1000000:
-Studentu skirstymas i grupes uztruko: 0.168725
-
-
--O2:
-Exe failo dydis: 201KB
-
-100000:
-Studentu skirstymas i grupes uztruko: 0.0160056
-
-1000000:
-Studentu skirstymas i grupes uztruko: 0.169638
-
-
--O3:
-Exe failo dydis: 250KB
-
-100000:
-Studentu skirstymas i grupes uztruko: 0.0159979
-
-1000000:
-Studentu skirstymas i grupes uztruko: 0.167737
+**file << '\n' << stud;**
 
