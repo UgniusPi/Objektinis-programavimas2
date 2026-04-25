@@ -28,4 +28,10 @@ int main() {
     Studentas d(std::move(a));
     cout << "d: " << d << endl;
     cout << "a after move: " << a << endl;
+
+    cout << "--- Move assignment ---" << endl;
+    Studentas e;
+    e = std::move(b);
+    cout << "e: " << e << endl;
+    cout << "b after move assign: " << b << endl;
 }

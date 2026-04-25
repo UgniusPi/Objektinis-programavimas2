@@ -30,6 +30,18 @@ Studentas &Studentas::operator=(const Studentas &other) {
     return *this;
 }
 
+Studentas &Studentas::operator=(Studentas &&other) noexcept {
+    if (this == &other) return *this;
+    vard_ = std::move(other.vard_);
+    pav_ = std::move(other.pav_);
+    tarp_ = std::move(other.tarp_);
+    egz_ = other.egz_;
+    gal_ = other.gal_;
+    other.egz_ = 0; other.gal_ = 0;
+    std::cerr << "[Studentas] move assign\n";
+    return *this;
+}
+
 Studentas::~Studentas() {
 }
 
