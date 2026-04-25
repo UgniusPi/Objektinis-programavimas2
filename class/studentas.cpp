@@ -19,6 +19,17 @@ Studentas::Studentas(Studentas &&other) noexcept
     std::cerr << "[Studentas] move ctor\n";
 }
 
+Studentas &Studentas::operator=(const Studentas &other) {
+    if (this == &other) return *this;
+    vard_ = other.vard_;
+    pav_ = other.pav_;
+    tarp_ = other.tarp_;
+    egz_ = other.egz_;
+    gal_ = other.gal_;
+    std::cerr << "[Studentas] copy assign: " << vard_ << " " << pav_ << "\n";
+    return *this;
+}
+
 Studentas::~Studentas() {
 }
 

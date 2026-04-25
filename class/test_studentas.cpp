@@ -19,6 +19,11 @@ int main() {
     Studentas b(a);
     cout << "b: " << b << endl;
 
+    cout << "--- Copy assignment ---" << endl;
+    Studentas c;
+    c = a;
+    cout << "c: " << c << endl;
+
     cout << "--- Move constructor ---" << endl;
     Studentas d(std::move(a));
     cout << "d: " << d << endl;

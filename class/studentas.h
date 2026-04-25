@@ -19,6 +19,7 @@ public:
 
     Studentas(const Studentas &other);
     Studentas(Studentas &&other) noexcept;
+    Studentas &operator=(const Studentas &other);
     ~Studentas();
 
     inline string getVard() const { return vard_; }
