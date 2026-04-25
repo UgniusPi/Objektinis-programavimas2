@@ -4,7 +4,8 @@
 #include <cctype>
 #include <fstream>
 #include <sstream>
-#include <filesystem> 
+#include <filesystem>
+#include <utility>
 #include "funkcijos.h"
 
 using std::string;
@@ -234,7 +235,7 @@ void ivestIsFailo(vector<Studentas> &studentai, string failoKelias,  bool &klaid
         visiPaz.pop_back();
         naujasStud.setTarp(visiPaz);
 
-        studentai.push_back(naujasStud);
+        studentai.push_back(std::move(naujasStud));
     }
 }
 

@@ -49,12 +49,9 @@ std::istream& Studentas::readStudent(std::istream& is) {
     if (!(is >> vard_)) return is;
     if (!(is >> pav_)) return is;
 
-    std::string rest;
-    std::getline(is, rest); 
-    std::stringstream ss(rest);
     std::vector<int> paz;
     int val;
-    while (ss >> val) {
+    while (is >> val) {
         paz.push_back(val);
     }
 
