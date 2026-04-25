@@ -15,6 +15,8 @@ private:
 public:
     Studentas() : vard_("Nenurodyta"), pav_("Nenurodyta"), egz_(0), gal_(0) { }
     Studentas(istream& is);
+
+    Studentas(const Studentas &other);
     ~Studentas();
 
     inline string getVard() const { return vard_; }
@@ -33,6 +35,7 @@ public:
     istream& readStudent(istream&);
 
     double galBalas(int pasirink);
+    friend std::ostream& operator<<(std::ostream& os, const Studentas& s);
 };
 
 bool compare(const Studentas&, const Studentas&);

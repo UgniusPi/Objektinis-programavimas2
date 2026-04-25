@@ -1,9 +1,16 @@
 #include "studentas.h"
 #include <sstream>
 #include <algorithm>
+#include <iostream>
+
 
 Studentas::Studentas(std::istream& is) {
     readStudent(is);
+}
+
+Studentas::Studentas(const Studentas &other)
+    : vard_(other.vard_), pav_(other.pav_), tarp_(other.tarp_), egz_(other.egz_), gal_(other.gal_) {
+    std::cerr << "[Studentas] copy ctor: " << vard_ << " " << pav_ << "\n";
 }
 
 Studentas::~Studentas() {
@@ -51,6 +58,14 @@ double Studentas::galBalas(int pasirink) {
     if (n % 2 == 1) med = tmp[n/2];
     else med = ((double)tmp[n/2] + tmp[n/2 - 1]) / 2.0;
     return med * 0.4 + (double)egz_ * 0.6;
+}
+
+std::ostream& operator<<(std::ostream& os, const Studentas& s) {
+    os << s.vard_ << " " << s.pav_;
+    for (const auto &p : s.tarp_) os << " " << p;
+    os << " " << s.egz_;
+    os << " " << s.gal_;
+    return os;
 }
 
 bool compare(const Studentas &a, const Studentas &b) {
