@@ -64,7 +64,7 @@ void ivestEkr(vector<Studentas> &studentai, bool rndPaz, bool rndVard) {
                 cout << "\n";
             }
             
-            studentai.push_back(naujasStud);
+            studentai.push_back(std::move(naujasStud));
         } 
         
         studSk = validInput("Iveskite papildomu studentu skaiciu (jei nenorite prideti studentu, iveskite 0): ");

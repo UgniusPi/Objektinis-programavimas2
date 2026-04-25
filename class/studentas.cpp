@@ -10,13 +10,13 @@ Studentas::Studentas(std::istream& is) {
 
 Studentas::Studentas(const Studentas &other)
     : vard_(other.vard_), pav_(other.pav_), tarp_(other.tarp_), egz_(other.egz_), gal_(other.gal_) {
-    std::cerr << "[Studentas] copy ctor: " << vard_ << " " << pav_ << "\n";
+    // std::cerr << "[Studentas] copy ctor: " << vard_ << " " << pav_ << "\n";
 }
 
 Studentas::Studentas(Studentas &&other) noexcept
     : vard_(std::move(other.vard_)), pav_(std::move(other.pav_)), tarp_(std::move(other.tarp_)), egz_(other.egz_), gal_(other.gal_) {
     other.egz_ = 0; other.gal_ = 0;
-    std::cerr << "[Studentas] move ctor\n";
+    // std::cerr << "[Studentas] move ctor\n";
 }
 
 Studentas &Studentas::operator=(const Studentas &other) {
@@ -26,7 +26,7 @@ Studentas &Studentas::operator=(const Studentas &other) {
     tarp_ = other.tarp_;
     egz_ = other.egz_;
     gal_ = other.gal_;
-    std::cerr << "[Studentas] copy assign: " << vard_ << " " << pav_ << "\n";
+    // std::cerr << "[Studentas] copy assign: " << vard_ << " " << pav_ << "\n";
     return *this;
 }
 
@@ -38,7 +38,7 @@ Studentas &Studentas::operator=(Studentas &&other) noexcept {
     egz_ = other.egz_;
     gal_ = other.gal_;
     other.egz_ = 0; other.gal_ = 0;
-    std::cerr << "[Studentas] move assign\n";
+    // std::cerr << "[Studentas] move assign\n";
     return *this;
 }
 
