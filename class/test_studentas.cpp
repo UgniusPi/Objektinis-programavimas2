@@ -19,4 +19,8 @@ int main() {
     Studentas b(a);
     cout << "b: " << b << endl;
 
+    cout << "--- Move constructor ---" << endl;
+    Studentas d(std::move(a));
+    cout << "d: " << d << endl;
+    cout << "a after move: " << a << endl;
 }

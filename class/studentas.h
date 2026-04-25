@@ -18,6 +18,7 @@ public:
     Studentas(istream& is);
 
     Studentas(const Studentas &other);
+    Studentas(Studentas &&other) noexcept;
     ~Studentas();
 
     inline string getVard() const { return vard_; }

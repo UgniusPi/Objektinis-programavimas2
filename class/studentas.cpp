@@ -13,6 +13,12 @@ Studentas::Studentas(const Studentas &other)
     std::cerr << "[Studentas] copy ctor: " << vard_ << " " << pav_ << "\n";
 }
 
+Studentas::Studentas(Studentas &&other) noexcept
+    : vard_(std::move(other.vard_)), pav_(std::move(other.pav_)), tarp_(std::move(other.tarp_)), egz_(other.egz_), gal_(other.gal_) {
+    other.egz_ = 0; other.gal_ = 0;
+    std::cerr << "[Studentas] move ctor\n";
+}
+
 Studentas::~Studentas() {
 }
 
