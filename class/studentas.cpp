@@ -2,6 +2,13 @@
 #include <sstream>
 #include <algorithm>
 #include <iostream>
+#include <iomanip>
+
+using std::left;
+using std::right;
+using std::setw;
+using std::setprecision;
+using std::fixed;
 
 
 Studentas::Studentas(std::istream& is) {
@@ -91,10 +98,7 @@ std::istream& operator>>(std::istream& is, Studentas& s) {
 }
 
 std::ostream& operator<<(std::ostream& os, const Studentas& s) {
-    os << s.vard_ << " " << s.pav_;
-    for (const auto &p : s.tarp_) os << " " << p;
-    os << " " << s.egz_;
-    os << " " << s.gal_;
+    os << left << setw(21) << s.pav_ << left << setw(16) << s.vard_ << left << setw(20) << fixed << setprecision(2) << s.gal_;
     return os;
 }
 
