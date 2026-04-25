@@ -4,6 +4,7 @@
 using std::string;
 using std::vector;
 using std::istream;
+using std::ostream;
 
 class Studentas {
 private:
@@ -35,7 +36,7 @@ public:
     istream& readStudent(istream&);
 
     double galBalas(int pasirink);
-    friend std::ostream& operator<<(std::ostream& os, const Studentas& s);
+    friend ostream& operator<<(std::ostream& os, const Studentas& s);
 };
 
 bool compare(const Studentas&, const Studentas&);
