@@ -1,20 +1,19 @@
 #include <string>
 #include <vector>
+#include "zmogus.h"
 
 using std::string;
 using std::vector;
 using std::istream;
 using std::ostream;
 
-class Studentas {
+class Studentas : public Zmogus {
 private:
-    string vard_;
-    string pav_;
     vector<int> tarp_;
     int egz_;
     double gal_;
 public:
-    Studentas() : vard_("Nenurodyta"), pav_("Nenurodyta"), egz_(0), gal_(0) { }
+    Studentas() : Zmogus(), tarp_(), egz_(0), gal_(0) { }
     Studentas(istream& is);
 
     Studentas(const Studentas &other);
@@ -23,14 +22,10 @@ public:
     Studentas &operator=(Studentas &&other) noexcept;
     ~Studentas();
 
-    inline string getVard() const { return vard_; }
-    inline string getPav() const { return pav_; }
     inline const vector<int>& getTarp() const { return tarp_; }
     inline int getEgz() const { return egz_; }
     inline double getGal() const { return gal_; }
 
-    inline void setVard(const string &v) { vard_ = v; }
-    inline void setPav(const string &p) { pav_ = p; }
     inline void setTarp(const vector<int> &t) { tarp_ = t; }
     inline void addTarp(int t) { tarp_.push_back(t); }
     inline void clearTarp() { tarp_.clear(); }
