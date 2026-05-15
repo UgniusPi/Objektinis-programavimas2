@@ -16,12 +16,12 @@ Studentas::Studentas(std::istream& is) {
 }
 
 Studentas::Studentas(const Studentas &other)
-    : vard_(other.vard_), pav_(other.pav_), tarp_(other.tarp_), egz_(other.egz_), gal_(other.gal_) {
+    : Zmogus(other), tarp_(other.tarp_), egz_(other.egz_), gal_(other.gal_) {
     // std::cerr << "[Studentas] copy ctor: " << vard_ << " " << pav_ << "\n";
 }
 
 Studentas::Studentas(Studentas &&other) noexcept
-    : vard_(std::move(other.vard_)), pav_(std::move(other.pav_)), tarp_(std::move(other.tarp_)), egz_(other.egz_), gal_(other.gal_) {
+    : Zmogus(std::move(other)), tarp_(std::move(other.tarp_)), egz_(other.egz_), gal_(other.gal_) {
     other.egz_ = 0; other.gal_ = 0;
     // std::cerr << "[Studentas] move ctor\n";
 }
@@ -119,7 +119,7 @@ std::istream& operator>>(std::istream& is, Studentas& s) {
 }
 
 std::ostream& operator<<(std::ostream& os, const Studentas& s) {
-    os << left << setw(21) << s.pav_ << left << setw(16) << s.vard_ << left << setw(20) << fixed << setprecision(2) << s.gal_;
+    os << left << setw(21) << s.getPav() << left << setw(16) << s.getVard() << left << setw(20) << fixed << setprecision(2) << s.gal_;
     return os;
 }
 
