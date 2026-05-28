@@ -9,6 +9,6 @@
 
 Demonstracija: testuose yra compile-time patikra, kad `Zmogus` yra abstrakti klasė, objektų kūrimas negalimas:
 
-![alt text](image-2.png)
-
 ![alt text](image-3.png)
+
+![alt text](image-2.png)
