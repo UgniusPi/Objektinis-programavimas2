@@ -5,6 +5,10 @@
 using std::cout;
 using std::endl;
 
+#include <type_traits>
+
+static_assert(std::is_abstract<Zmogus>::value, "Zmogus must be abstract (cannot instantiate).");
+
 int main() {
     cout << "--- Default constructor ---" << endl;
     Studentas a;

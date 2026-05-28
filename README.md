@@ -2,7 +2,7 @@
 
 | Metodas | Parašas | Paskirtis |
 |---|---|---|
-| Konstrukcija (numatytasis) | `Studentas()` | Sukuria objektą su `vard="Nenurodyta"`, `pav="Nenurodyta"`. |
+| Konstruktorius (numatytasis) | `Studentas()` | Sukuria objektą su `vard="Nenurodyta"`, `pav="Nenurodyta"`. |
 | Konstruoti iš srauto | `Studentas(std::istream&)` | Skaito vieną įrašo eilutę per `readStudent` (naudojamas `operator>>`). |
 | Kopijavimo konstruktorius | `Studentas(const Studentas&)` | Atlieka gilų kopijavimą (`std::string`, `std::vector`). |
 | Kopijavimo priskyrimas | `Studentas& operator=(const Studentas&)` | Priskiria reikšmes (saugaus self-assignment). |
@@ -34,3 +34,6 @@ Abiejose naudojamas perdengtas operatorius <<
 
 **file << '\n' << stud;**
 
+Abstrakčios klasės "Žmogus" objektų kūrimas negalimas:
+
+![alt text](image-2.png)
