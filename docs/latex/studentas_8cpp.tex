@@ -1,0 +1,77 @@
+\doxysection{class/\+studentas.cpp File Reference}
+\hypertarget{studentas_8cpp}{}\label{studentas_8cpp}\index{class/studentas.cpp@{class/studentas.cpp}}
+
+
+Studento klasės funkcijų įgyvendinimai.  
+
+
+{\ttfamily \+\#include "{}studentas.\+h"{}}\newline
+{\ttfamily \+\#include $<$sstream$>$}\newline
+{\ttfamily \+\#include $<$algorithm$>$}\newline
+{\ttfamily \+\#include $<$iostream$>$}\newline
+{\ttfamily \+\#include $<$iomanip$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std::\+istream \& \doxymbox{\hyperlink{studentas_8cpp_ac63003b577b137ac6ad5b1fb176bd59a}{operator$>$$>$}} (std::\+istream \&is, \doxymbox{\hyperlink{class_studentas}{Studentas}} \&s)
+\item 
+std::\+ostream \& \doxymbox{\hyperlink{studentas_8cpp_a4062cbd3f4c44fac2063e38cfa00a8cf}{operator$<$$<$}} (std::\+ostream \&os, const \doxymbox{\hyperlink{class_studentas}{Studentas}} \&s)
+\item 
+bool \doxymbox{\hyperlink{studentas_8cpp_ab61fdda5da1fd7d3128ca416c9dcd00b}{compare}} (const \doxymbox{\hyperlink{class_studentas}{Studentas}} \&a, const \doxymbox{\hyperlink{class_studentas}{Studentas}} \&b)
+\begin{DoxyCompactList}\small\item\em Lygina studentus pagal vardą (ascending). \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{studentas_8cpp_a3bb6ccb88204b8e5648eaedf0ac7bfa7}{compare\+Pagal\+Pavarde}} (const \doxymbox{\hyperlink{class_studentas}{Studentas}} \&a, const \doxymbox{\hyperlink{class_studentas}{Studentas}} \&b)
+\begin{DoxyCompactList}\small\item\em Lygina studentus pagal pavardę (ascending). \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{studentas_8cpp_afb9c8b871be75ed587ec87d3504990dd}{compare\+Pagal\+Gal}} (const \doxymbox{\hyperlink{class_studentas}{Studentas}} \&a, const \doxymbox{\hyperlink{class_studentas}{Studentas}} \&b)
+\begin{DoxyCompactList}\small\item\em Lygina studentus pagal galutinį balą (descending). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Studento klasės funkcijų įgyvendinimai. 
+
+
+
+\label{studentas_8cpp_doc-func-members}
+\Hypertarget{studentas_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{studentas_8cpp_ab61fdda5da1fd7d3128ca416c9dcd00b}\index{studentas.cpp@{studentas.cpp}!compare@{compare}}
+\index{compare@{compare}!studentas.cpp@{studentas.cpp}}
+\doxysubsubsection{\texorpdfstring{compare()}{compare()}}
+{\footnotesize\ttfamily \label{studentas_8cpp_ab61fdda5da1fd7d3128ca416c9dcd00b} 
+bool compare (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_studentas}{Studentas}} \&}]{a}{, }\item[{const \doxymbox{\hyperlink{class_studentas}{Studentas}} \&}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Lygina studentus pagal vardą (ascending). 
+
+\Hypertarget{studentas_8cpp_afb9c8b871be75ed587ec87d3504990dd}\index{studentas.cpp@{studentas.cpp}!comparePagalGal@{comparePagalGal}}
+\index{comparePagalGal@{comparePagalGal}!studentas.cpp@{studentas.cpp}}
+\doxysubsubsection{\texorpdfstring{comparePagalGal()}{comparePagalGal()}}
+{\footnotesize\ttfamily \label{studentas_8cpp_afb9c8b871be75ed587ec87d3504990dd} 
+bool compare\+Pagal\+Gal (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_studentas}{Studentas}} \&}]{a}{, }\item[{const \doxymbox{\hyperlink{class_studentas}{Studentas}} \&}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Lygina studentus pagal galutinį balą (descending). 
+
+\Hypertarget{studentas_8cpp_a3bb6ccb88204b8e5648eaedf0ac7bfa7}\index{studentas.cpp@{studentas.cpp}!comparePagalPavarde@{comparePagalPavarde}}
+\index{comparePagalPavarde@{comparePagalPavarde}!studentas.cpp@{studentas.cpp}}
+\doxysubsubsection{\texorpdfstring{comparePagalPavarde()}{comparePagalPavarde()}}
+{\footnotesize\ttfamily \label{studentas_8cpp_a3bb6ccb88204b8e5648eaedf0ac7bfa7} 
+bool compare\+Pagal\+Pavarde (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_studentas}{Studentas}} \&}]{a}{, }\item[{const \doxymbox{\hyperlink{class_studentas}{Studentas}} \&}]{b}{}\end{DoxyParamCaption})}
+
+
+
+Lygina studentus pagal pavardę (ascending). 
+
+\Hypertarget{studentas_8cpp_a4062cbd3f4c44fac2063e38cfa00a8cf}\index{studentas.cpp@{studentas.cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!studentas.cpp@{studentas.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily \label{studentas_8cpp_a4062cbd3f4c44fac2063e38cfa00a8cf} 
+std::\+ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std::\+ostream \&}]{os}{, }\item[{const \doxymbox{\hyperlink{class_studentas}{Studentas}} \&}]{s}{}\end{DoxyParamCaption})}
+
+\Hypertarget{studentas_8cpp_ac63003b577b137ac6ad5b1fb176bd59a}\index{studentas.cpp@{studentas.cpp}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!studentas.cpp@{studentas.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily \label{studentas_8cpp_ac63003b577b137ac6ad5b1fb176bd59a} 
+std::\+istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std::\+istream \&}]{is}{, }\item[{\doxymbox{\hyperlink{class_studentas}{Studentas}} \&}]{s}{}\end{DoxyParamCaption})}
+

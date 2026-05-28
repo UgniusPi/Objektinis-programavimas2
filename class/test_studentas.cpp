@@ -1,3 +1,8 @@
+/**
+ * @file test_studentas.cpp
+ * @brief Trumpi vieneto testai `Studentas` klasei.
+ */
+
 #include <iostream>
 #include <sstream>
 #include "studentas.h"
@@ -9,6 +14,7 @@ using std::endl;
 
 static_assert(std::is_abstract<Zmogus>::value, "Zmogus must be abstract (cannot instantiate).");
 
+/** @brief Testų vykdymo įėjimo taškas. */
 int main() {
     cout << "--- Default constructor ---" << endl;
     Studentas a;

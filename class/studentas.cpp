@@ -1,3 +1,8 @@
+/**
+ * @file studentas.cpp
+ * @brief Studento klasės funkcijų įgyvendinimai.
+ */
+
 #include "studentas.h"
 #include <sstream>
 #include <algorithm>

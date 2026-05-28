@@ -1,0 +1,176 @@
+\doxysection{class/\+output.cpp File Reference}
+\hypertarget{output_8cpp}{}\label{output_8cpp}\index{class/output.cpp@{class/output.cpp}}
+
+
+Išvesties ir pagalbinių funkcijų įgyvendinimai.  
+
+
+{\ttfamily \+\#include $<$iostream$>$}\newline
+{\ttfamily \+\#include $<$vector$>$}\newline
+{\ttfamily \+\#include $<$iomanip$>$}\newline
+{\ttfamily \+\#include $<$algorithm$>$}\newline
+{\ttfamily \+\#include $<$string$>$}\newline
+{\ttfamily \+\#include $<$cstdlib$>$}\newline
+{\ttfamily \+\#include $<$fstream$>$}\newline
+{\ttfamily \+\#include $<$filesystem$>$}\newline
+{\ttfamily \+\#include "{}funkcijos.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{output_8cpp_aff443495af8e0f2e96bbf61e98bb1a53}{isvest\+Ekr}} (const vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai, int pasirink)
+\begin{DoxyCompactList}\small\item\em Išveda studentų sąrašą į konsolę. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{output_8cpp_a500d95e2dd313034ed99259ec483042a}{skaic\+Gal}} (vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai, int pasirink)
+\begin{DoxyCompactList}\small\item\em Apskaičiuoja ir nustato kiekvieno studento galutinį balą. \end{DoxyCompactList}\item 
+string \doxymbox{\hyperlink{output_8cpp_a81b51147c6eb391f150b37b2bf23aaf2}{rnd\+Vardas}} (int from, int to)
+\begin{DoxyCompactList}\small\item\em Sugeneruoja atsitiktinį vardą/\+pavardę nurodytu ilgiu. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{output_8cpp_a45d616aa0ff91f78bd6878b8f1b962bd}{isvest\+IFaila}} (const vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai, int pasirink, string failo\+Pav)
+\begin{DoxyCompactList}\small\item\em Išsaugo studentų sąrašą į nurodytą failą. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{output_8cpp_ac725b2c649b592e7e0c6621314191ea9}{rusiuok}} (vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai, int rus\+Budas)
+\begin{DoxyCompactList}\small\item\em Rūšiuoja studentus pagal pasirinkimą. \end{DoxyCompactList}\item 
+string \doxymbox{\hyperlink{output_8cpp_a8c94f6b339fab597784ad872268e1249}{kurk\+Faila}} (int stud\+Sk, int paz\+Sk)
+\begin{DoxyCompactList}\small\item\em Sugeneruoja įvesties failą su atsitiktiniais duomenimis. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{output_8cpp_ae684097cf7237095e17606debda3be4e}{skirstyk}} (vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai, vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&vargsiukai)
+\begin{DoxyCompactList}\small\item\em Atskiria silpniausius studentus į atskirą vektorių {\ttfamily vargsiukai}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Išvesties ir pagalbinių funkcijų įgyvendinimai. 
+
+
+
+\label{output_8cpp_doc-func-members}
+\Hypertarget{output_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{output_8cpp_aff443495af8e0f2e96bbf61e98bb1a53}\index{output.cpp@{output.cpp}!isvestEkr@{isvestEkr}}
+\index{isvestEkr@{isvestEkr}!output.cpp@{output.cpp}}
+\doxysubsubsection{\texorpdfstring{isvestEkr()}{isvestEkr()}}
+{\footnotesize\ttfamily \label{output_8cpp_aff443495af8e0f2e96bbf61e98bb1a53} 
+void isvest\+Ekr (\begin{DoxyParamCaption}\item[{const vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{studentai}{, }\item[{int}]{pasirink}{}\end{DoxyParamCaption})}
+
+
+
+Išveda studentų sąrašą į konsolę. 
+
+Išveda studentus į ekraną.
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & Studentų vektorius. \\
+\hline
+{\em pasirink} & Galutinio balo skaičiavimo metodas (1 -\/ vid., 2 -\/ med.).\\
+\hline
+\end{DoxyParams}
+Išveda studentų sąrašą į konsolę. \Hypertarget{output_8cpp_a45d616aa0ff91f78bd6878b8f1b962bd}\index{output.cpp@{output.cpp}!isvestIFaila@{isvestIFaila}}
+\index{isvestIFaila@{isvestIFaila}!output.cpp@{output.cpp}}
+\doxysubsubsection{\texorpdfstring{isvestIFaila()}{isvestIFaila()}}
+{\footnotesize\ttfamily \label{output_8cpp_a45d616aa0ff91f78bd6878b8f1b962bd} 
+void isvest\+IFaila (\begin{DoxyParamCaption}\item[{const vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{studentai}{, }\item[{int}]{pasirink}{, }\item[{string}]{failo\+Pav}{ = {\ttfamily "{}isvestis.txt"{}}}\end{DoxyParamCaption})}
+
+
+
+Išsaugo studentų sąrašą į nurodytą failą. 
+
+Išsaugo studentų sąrašą į failą.
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & Studentų vektorius. \\
+\hline
+{\em pasirink} & Galutinio balo skaičiavimo metodas. \\
+\hline
+{\em failo\+Pav} & Išeities failo pavadinimas.\\
+\hline
+\end{DoxyParams}
+Išsaugo studentų sąrašą į nurodytą failą.
+
+
+\begin{DoxyParams}{Parameters}
+{\em failo\+Pav} & Pasirinktinai -\/ išeities failo pavadinimas. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{output_8cpp_a8c94f6b339fab597784ad872268e1249}\index{output.cpp@{output.cpp}!kurkFaila@{kurkFaila}}
+\index{kurkFaila@{kurkFaila}!output.cpp@{output.cpp}}
+\doxysubsubsection{\texorpdfstring{kurkFaila()}{kurkFaila()}}
+{\footnotesize\ttfamily \label{output_8cpp_a8c94f6b339fab597784ad872268e1249} 
+string kurk\+Faila (\begin{DoxyParamCaption}\item[{int}]{stud\+Sk}{, }\item[{int}]{paz\+Sk}{}\end{DoxyParamCaption})}
+
+
+
+Sugeneruoja įvesties failą su atsitiktiniais duomenimis. 
+
+Sukuria atsitiktinį įvesties failą su nurodytu studentų ir pažymių skaičiumi.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stud\+Sk} & Studentų skaičius. \\
+\hline
+{\em paz\+Sk} & Pažymių skaičius kiekvienam studentui. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Sugeneruoto failo kelias.
+\end{DoxyReturn}
+Sugeneruoja įvesties failą su atsitiktiniais duomenimis. \Hypertarget{output_8cpp_a81b51147c6eb391f150b37b2bf23aaf2}\index{output.cpp@{output.cpp}!rndVardas@{rndVardas}}
+\index{rndVardas@{rndVardas}!output.cpp@{output.cpp}}
+\doxysubsubsection{\texorpdfstring{rndVardas()}{rndVardas()}}
+{\footnotesize\ttfamily \label{output_8cpp_a81b51147c6eb391f150b37b2bf23aaf2} 
+string rnd\+Vardas (\begin{DoxyParamCaption}\item[{int}]{from}{, }\item[{int}]{to}{}\end{DoxyParamCaption})}
+
+
+
+Sugeneruoja atsitiktinį vardą/\+pavardę nurodytu ilgiu. 
+
+Sugeneruoja atsitiktinį vardą/\+pavardę nurodytu ilgio intervale.
+
+
+\begin{DoxyParams}{Parameters}
+{\em from} & Minimalus simbolių skaičius. \\
+\hline
+{\em to} & Maksimalus simbolių skaičius. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Sugeneruotas tekstas.
+\end{DoxyReturn}
+Sugeneruoja atsitiktinį vardą/\+pavardę nurodytu ilgiu. \Hypertarget{output_8cpp_ac725b2c649b592e7e0c6621314191ea9}\index{output.cpp@{output.cpp}!rusiuok@{rusiuok}}
+\index{rusiuok@{rusiuok}!output.cpp@{output.cpp}}
+\doxysubsubsection{\texorpdfstring{rusiuok()}{rusiuok()}}
+{\footnotesize\ttfamily \label{output_8cpp_ac725b2c649b592e7e0c6621314191ea9} 
+void rusiuok (\begin{DoxyParamCaption}\item[{vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{studentai}{, }\item[{int}]{rus\+Budas}{}\end{DoxyParamCaption})}
+
+
+
+Rūšiuoja studentus pagal pasirinkimą. 
+
+Rūšiuoja studentus pagal pasirinktą kriterijų.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rus\+Budas} & 1-\/vardas, 2-\/pavardė, 3-\/galutinis balas\\
+\hline
+\end{DoxyParams}
+Rūšiuoja studentus pagal pasirinkimą. \Hypertarget{output_8cpp_a500d95e2dd313034ed99259ec483042a}\index{output.cpp@{output.cpp}!skaicGal@{skaicGal}}
+\index{skaicGal@{skaicGal}!output.cpp@{output.cpp}}
+\doxysubsubsection{\texorpdfstring{skaicGal()}{skaicGal()}}
+{\footnotesize\ttfamily \label{output_8cpp_a500d95e2dd313034ed99259ec483042a} 
+void skaic\+Gal (\begin{DoxyParamCaption}\item[{vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{studentai}{, }\item[{int}]{pasirink}{}\end{DoxyParamCaption})}
+
+
+
+Apskaičiuoja ir nustato kiekvieno studento galutinį balą. 
+
+Apskaičiuoja visų studentų galutinius balus.
+
+Apskaičiuoja ir nustato kiekvieno studento galutinį balą. \Hypertarget{output_8cpp_ae684097cf7237095e17606debda3be4e}\index{output.cpp@{output.cpp}!skirstyk@{skirstyk}}
+\index{skirstyk@{skirstyk}!output.cpp@{output.cpp}}
+\doxysubsubsection{\texorpdfstring{skirstyk()}{skirstyk()}}
+{\footnotesize\ttfamily \label{output_8cpp_ae684097cf7237095e17606debda3be4e} 
+void skirstyk (\begin{DoxyParamCaption}\item[{vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{studentai}{, }\item[{vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{vargsiukai}{}\end{DoxyParamCaption})}
+
+
+
+Atskiria silpniausius studentus į atskirą vektorių {\ttfamily vargsiukai}. 
+
+Atskiria į dvi grupes:\+ silpnesnius ir stipresnius studentus.
+
+Atskiria silpniausius studentus į atskirą vektorių {\ttfamily vargsiukai}. 

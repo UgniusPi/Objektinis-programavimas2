@@ -1,0 +1,246 @@
+\doxysection{class/\+input.cpp File Reference}
+\hypertarget{input_8cpp}{}\label{input_8cpp}\index{class/input.cpp@{class/input.cpp}}
+
+
+Įvesties apdorojimo funkcijų aprašymai.  
+
+
+{\ttfamily \+\#include $<$iostream$>$}\newline
+{\ttfamily \+\#include $<$vector$>$}\newline
+{\ttfamily \+\#include $<$string$>$}\newline
+{\ttfamily \+\#include $<$cctype$>$}\newline
+{\ttfamily \+\#include $<$fstream$>$}\newline
+{\ttfamily \+\#include $<$sstream$>$}\newline
+{\ttfamily \+\#include $<$filesystem$>$}\newline
+{\ttfamily \+\#include $<$utility$>$}\newline
+{\ttfamily \+\#include "{}funkcijos.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{input_8cpp_a9e73d18db5216f4df9d6a0cb31b8a94c}{ivest\+Ekr}} (vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai, bool rnd\+Paz, bool rnd\+Vard)
+\begin{DoxyCompactList}\small\item\em Interaktyviai įveda arba generuoja studentų duomenis. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{input_8cpp_af7f91f5f73706e395f2ddec29ad6f2ee}{is\+Int}} (string inp)
+\begin{DoxyCompactList}\small\item\em Tikrina ar pateikta eilutė atitinka sveiko skaičiaus formatą. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{input_8cpp_a6be017955d80184319d3673b17b8a9a6}{valid\+Input}} (string prompt)
+\begin{DoxyCompactList}\small\item\em Perskaito vartotojo įvestį ir grąžina sveiką skaičių. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{input_8cpp_a2a67efbf9303435506d2945818f3b15b}{valid\+Range}} (int from, int to, string prompt)
+\begin{DoxyCompactList}\small\item\em Patikrina, ar įvestas skaičius yra nurodytame intervale. \end{DoxyCompactList}\item 
+string \doxymbox{\hyperlink{input_8cpp_a03a9b5f6f831b1d6d3d3a84c67ea1cb1}{valid\+Length}} (int max\+Length, string prompt)
+\begin{DoxyCompactList}\small\item\em Patikrina įvesto teksto ilgį ir grąžina galutinį tekstą. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{input_8cpp_ace85bd0121c080e6ec2ab49afa8e3d86}{klausk\+Eigos}} (bool \&testi, \doxymbox{\hyperlink{struct_nustatymai}{Nustatymai}} \&nustatymai)
+\begin{DoxyCompactList}\small\item\em Užduoda vartotojui programos eigą ir užpildo {\ttfamily \doxylink{struct_nustatymai}{Nustatymai}} struktūrą. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{input_8cpp_aa401f5200185c0b37f7bdc610fac0759}{ivest\+Is\+Failo}} (vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai, string failo\+Kelias, bool \&klaida)
+\begin{DoxyCompactList}\small\item\em Nuskaito studentų duomenis iš nurodyto failo. \end{DoxyCompactList}\item 
+string \doxymbox{\hyperlink{input_8cpp_aa0ae3afe7bdd994adccc031bd7a0de12}{klausk\+Failo}} (bool \&klaida)
+\begin{DoxyCompactList}\small\item\em Leidžia vartotojui pasirinkti įvesties failą iš katalogo arba sugeneruoti naują. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Įvesties apdorojimo funkcijų aprašymai. 
+
+
+
+\label{input_8cpp_doc-func-members}
+\Hypertarget{input_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{input_8cpp_af7f91f5f73706e395f2ddec29ad6f2ee}\index{input.cpp@{input.cpp}!isInt@{isInt}}
+\index{isInt@{isInt}!input.cpp@{input.cpp}}
+\doxysubsubsection{\texorpdfstring{isInt()}{isInt()}}
+{\footnotesize\ttfamily \label{input_8cpp_af7f91f5f73706e395f2ddec29ad6f2ee} 
+bool is\+Int (\begin{DoxyParamCaption}\item[{string}]{inp}{}\end{DoxyParamCaption})}
+
+
+
+Tikrina ar pateikta eilutė atitinka sveiko skaičiaus formatą. 
+
+Tikrina ar eilutė yra sveikasis skaičius.
+
+Tikrina ar pateikta eilutė atitinka sveiko skaičiaus formatą. \Hypertarget{input_8cpp_a9e73d18db5216f4df9d6a0cb31b8a94c}\index{input.cpp@{input.cpp}!ivestEkr@{ivestEkr}}
+\index{ivestEkr@{ivestEkr}!input.cpp@{input.cpp}}
+\doxysubsubsection{\texorpdfstring{ivestEkr()}{ivestEkr()}}
+{\footnotesize\ttfamily \label{input_8cpp_a9e73d18db5216f4df9d6a0cb31b8a94c} 
+void ivest\+Ekr (\begin{DoxyParamCaption}\item[{vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{studentai}{, }\item[{bool}]{rnd\+Paz}{, }\item[{bool}]{rnd\+Vard}{}\end{DoxyParamCaption})}
+
+
+
+Interaktyviai įveda arba generuoja studentų duomenis. 
+
+Įveda studentus iš ekrano arba juos sugeneruoja.
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & Rezultatinis studentų vektorius. \\
+\hline
+{\em rnd\+Paz} & Ar generuoti pažymius atsitiktinai. \\
+\hline
+{\em rnd\+Vard} & Ar generuoti vardus/\+pavardes atsitiktinai.\\
+\hline
+\end{DoxyParams}
+Interaktyviai įveda arba generuoja studentų duomenis.
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & Rezultatinis studentų vektorius (pridedami elementai). \\
+\hline
+{\em rnd\+Paz} & Ar generuoti tarpinius pažymius atsitiktinai. \\
+\hline
+{\em rnd\+Vard} & Ar generuoti vardus/\+pavardes atsitiktinai. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{input_8cpp_aa401f5200185c0b37f7bdc610fac0759}\index{input.cpp@{input.cpp}!ivestIsFailo@{ivestIsFailo}}
+\index{ivestIsFailo@{ivestIsFailo}!input.cpp@{input.cpp}}
+\doxysubsubsection{\texorpdfstring{ivestIsFailo()}{ivestIsFailo()}}
+{\footnotesize\ttfamily \label{input_8cpp_aa401f5200185c0b37f7bdc610fac0759} 
+void ivest\+Is\+Failo (\begin{DoxyParamCaption}\item[{vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{studentai}{, }\item[{string}]{failo\+Kelias}{, }\item[{bool \&}]{klaida}{}\end{DoxyParamCaption})}
+
+
+
+Nuskaito studentų duomenis iš nurodyto failo. 
+
+Nuskaito studentų duomenis iš failo.
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & Rezultatinis studentų vektorius. \\
+\hline
+{\em failo\+Kelias} & Įvesties failo kelias. \\
+\hline
+{\em klaida} & Išeities parametras:\+ true jei įvyko klaida.\\
+\hline
+\end{DoxyParams}
+Nuskaito studentų duomenis iš nurodyto failo.
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & Rezultatinis studentų vektorius. \\
+\hline
+{\em failo\+Kelias} & Įvesties failo kelias. \\
+\hline
+{\em klaida} & Išeities parametras:\+ true jei įvyko klaida. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{input_8cpp_ace85bd0121c080e6ec2ab49afa8e3d86}\index{input.cpp@{input.cpp}!klauskEigos@{klauskEigos}}
+\index{klauskEigos@{klauskEigos}!input.cpp@{input.cpp}}
+\doxysubsubsection{\texorpdfstring{klauskEigos()}{klauskEigos()}}
+{\footnotesize\ttfamily \label{input_8cpp_ace85bd0121c080e6ec2ab49afa8e3d86} 
+void klausk\+Eigos (\begin{DoxyParamCaption}\item[{bool \&}]{testi}{, }\item[{\doxymbox{\hyperlink{struct_nustatymai}{Nustatymai}} \&}]{nustatymai}{}\end{DoxyParamCaption})}
+
+
+
+Užduoda vartotojui programos eigą ir užpildo {\ttfamily \doxylink{struct_nustatymai}{Nustatymai}} struktūrą. 
+
+Užduoda vartotojui programos eigą ir užpildo {\ttfamily \doxylink{struct_nustatymai}{Nustatymai}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em testi} & Išeities parametras:\+ ar tęsti programą. \\
+\hline
+{\em nustatymai} & Parametrų struktūra, pildoma pagal pasirinkimus.\\
+\hline
+\end{DoxyParams}
+Užduoda vartotojui programos eigą ir užpildo {\ttfamily \doxylink{struct_nustatymai}{Nustatymai}} struktūrą.
+
+
+\begin{DoxyParams}{Parameters}
+{\em testi} & Išeities parametras:\+ ar tęsti programą. \\
+\hline
+{\em nustatymai} & Išvedami pasirinkimai. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{input_8cpp_aa0ae3afe7bdd994adccc031bd7a0de12}\index{input.cpp@{input.cpp}!klauskFailo@{klauskFailo}}
+\index{klauskFailo@{klauskFailo}!input.cpp@{input.cpp}}
+\doxysubsubsection{\texorpdfstring{klauskFailo()}{klauskFailo()}}
+{\footnotesize\ttfamily \label{input_8cpp_aa0ae3afe7bdd994adccc031bd7a0de12} 
+string klausk\+Failo (\begin{DoxyParamCaption}\item[{bool \&}]{klaida}{}\end{DoxyParamCaption})}
+
+
+
+Leidžia vartotojui pasirinkti įvesties failą iš katalogo arba sugeneruoti naują. 
+
+Leidžia vartotojui pasirinkti įvesties failą arba sugeneruoti naują.
+
+
+\begin{DoxyParams}{Parameters}
+{\em klaida} & Išeities parametras:\+ true jei įvyko klaida skaitant katalogą. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Grąžina pasirinkto arba sugeneruoto failo kelią.
+\end{DoxyReturn}
+Leidžia vartotojui pasirinkti įvesties failą iš katalogo arba sugeneruoti naują.
+
+
+\begin{DoxyParams}{Parameters}
+{\em klaida} & Išeities parametras:\+ true jei įvyko klaida. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Grąžina pasirinkto failo kelią arba sugeneruoto failo kelią. 
+\end{DoxyReturn}
+\Hypertarget{input_8cpp_a6be017955d80184319d3673b17b8a9a6}\index{input.cpp@{input.cpp}!validInput@{validInput}}
+\index{validInput@{validInput}!input.cpp@{input.cpp}}
+\doxysubsubsection{\texorpdfstring{validInput()}{validInput()}}
+{\footnotesize\ttfamily \label{input_8cpp_a6be017955d80184319d3673b17b8a9a6} 
+int valid\+Input (\begin{DoxyParamCaption}\item[{string}]{prompt}{}\end{DoxyParamCaption})}
+
+
+
+Perskaito vartotojo įvestį ir grąžina sveiką skaičių. 
+
+Perskaito ir validuoja sveiką įvestį iš vartotojo.
+
+
+\begin{DoxyParams}{Parameters}
+{\em prompt} & Prašymas vartotojui. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Perskaitytas sveikasis skaičius.
+\end{DoxyReturn}
+Perskaito vartotojo įvestį ir grąžina sveiką skaičių. \Hypertarget{input_8cpp_a03a9b5f6f831b1d6d3d3a84c67ea1cb1}\index{input.cpp@{input.cpp}!validLength@{validLength}}
+\index{validLength@{validLength}!input.cpp@{input.cpp}}
+\doxysubsubsection{\texorpdfstring{validLength()}{validLength()}}
+{\footnotesize\ttfamily \label{input_8cpp_a03a9b5f6f831b1d6d3d3a84c67ea1cb1} 
+string valid\+Length (\begin{DoxyParamCaption}\item[{int}]{max\+Length}{, }\item[{string}]{prompt}{}\end{DoxyParamCaption})}
+
+
+
+Patikrina įvesto teksto ilgį ir grąžina galutinį tekstą. 
+
+Tikrina tekstinio lauko ilgį ir grąžina galutinį tekstą.
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Length} & Maksimalus ilgis. \\
+\hline
+{\em prompt} & Prašymas vartotojui. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Galutinis tekstas (jei tuščias, grąžinama "{}\+Nenurodyta"{}).
+\end{DoxyReturn}
+Patikrina įvesto teksto ilgį ir grąžina galutinį tekstą. \Hypertarget{input_8cpp_a2a67efbf9303435506d2945818f3b15b}\index{input.cpp@{input.cpp}!validRange@{validRange}}
+\index{validRange@{validRange}!input.cpp@{input.cpp}}
+\doxysubsubsection{\texorpdfstring{validRange()}{validRange()}}
+{\footnotesize\ttfamily \label{input_8cpp_a2a67efbf9303435506d2945818f3b15b} 
+int valid\+Range (\begin{DoxyParamCaption}\item[{int}]{from}{, }\item[{int}]{to}{, }\item[{string}]{prompt}{}\end{DoxyParamCaption})}
+
+
+
+Patikrina, ar įvestas skaičius yra nurodytame intervale. 
+
+Validuoja įvestą skaičių intervale \+[from, to]\+.
+
+
+\begin{DoxyParams}{Parameters}
+{\em from} & Intervalo pradžia. \\
+\hline
+{\em to} & Intervalo pabaiga. \\
+\hline
+{\em prompt} & Prašymas vartotojui. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Validuotas skaičius intervale.
+\end{DoxyReturn}
+Patikrina, ar įvestas skaičius yra nurodytame intervale. 

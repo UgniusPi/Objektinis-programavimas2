@@ -1,3 +1,8 @@
+/**
+ * @file input.cpp
+ * @brief Įvesties apdorojimo funkcijų aprašymai.
+ */
+
 #include <iostream>
 #include <vector>
 #include <string>
@@ -23,6 +28,12 @@ using std::filesystem::path;
 using std::filesystem::directory_iterator;
 using std::exception;
 
+/**
+ * @brief Interaktyviai įveda arba generuoja studentų duomenis.
+ * @param studentai Rezultatinis studentų vektorius.
+ * @param rndPaz Ar generuoti pažymius atsitiktinai.
+ * @param rndVard Ar generuoti vardus/pavardes atsitiktinai.
+ */
 void ivestEkr(vector<Studentas> &studentai, bool rndPaz, bool rndVard) {
     int studSk = validInput("Iveskite studentu skaiciu: ");
     cout << "\n";
@@ -74,6 +85,7 @@ void ivestEkr(vector<Studentas> &studentai, bool rndPaz, bool rndVard) {
     }
 }
 
+/** @brief Tikrina ar pateikta eilutė atitinka sveiko skaičiaus formatą. */
 bool isInt(string inp) {
     for (int i=0; i<inp.length(); i++) {
         if (!isdigit(inp[i])) {
@@ -84,6 +96,11 @@ bool isInt(string inp) {
     return inp.length() != 0 && inp.length() <= 10;
 }
 
+/**
+ * @brief Perskaito vartotojo įvestį ir grąžina sveiką skaičių.
+ * @param prompt Prašymas vartotojui.
+ * @return Perskaitytas sveikasis skaičius.
+ */
 int validInput(string prompt) {
     string inp;
     
@@ -97,6 +114,13 @@ int validInput(string prompt) {
     return stoi(inp);
 }
 
+/**
+ * @brief Patikrina, ar įvestas skaičius yra nurodytame intervale.
+ * @param from Intervalo pradžia.
+ * @param to Intervalo pabaiga.
+ * @param prompt Prašymas vartotojui.
+ * @return Validuotas skaičius intervale.
+ */
 int validRange(int from, int to, string prompt) {
     int inp = validInput(prompt);
     while (inp < from || inp > to) {
@@ -107,6 +131,12 @@ int validRange(int from, int to, string prompt) {
     return inp;
 }
 
+/**
+ * @brief Patikrina įvesto teksto ilgį ir grąžina galutinį tekstą.
+ * @param maxLength Maksimalus ilgis.
+ * @param prompt Prašymas vartotojui.
+ * @return Galutinis tekstas (jei tuščias, grąžinama "Nenurodyta").
+ */
 string validLength(int maxLength, string prompt) {
     string inp;
     
@@ -125,6 +155,11 @@ string validLength(int maxLength, string prompt) {
     return inp;
 }
 
+/**
+ * @brief Užduoda vartotojui programos eigą ir užpildo `Nustatymai` struktūrą.
+ * @param testi Išeities parametras: ar tęsti programą.
+ * @param nustatymai Parametrų struktūra, pildoma pagal pasirinkimus.
+ */
 void klauskEigos(bool &testi, Nustatymai &nustatymai) {
     int eiga;
     testi = true;
@@ -178,6 +213,12 @@ void klauskEigos(bool &testi, Nustatymai &nustatymai) {
     return;
 }
 
+/**
+ * @brief Nuskaito studentų duomenis iš nurodyto failo.
+ * @param studentai Rezultatinis studentų vektorius.
+ * @param failoKelias Įvesties failo kelias.
+ * @param klaida Išeities parametras: true jei įvyko klaida.
+ */
 void ivestIsFailo(vector<Studentas> &studentai, string failoKelias,  bool &klaida) {
     ifstream file(failoKelias);
     stringstream buffer;
@@ -208,6 +249,11 @@ void ivestIsFailo(vector<Studentas> &studentai, string failoKelias,  bool &klaid
     }
 }
 
+/**
+ * @brief Leidžia vartotojui pasirinkti įvesties failą iš katalogo arba sugeneruoti naują.
+ * @param klaida Išeities parametras: true jei įvyko klaida skaitant katalogą.
+ * @return Grąžina pasirinkto arba sugeneruoto failo kelią.
+ */
 string klauskFailo(bool &klaida) {
     vector<path> failuPav;
     klaida = false;

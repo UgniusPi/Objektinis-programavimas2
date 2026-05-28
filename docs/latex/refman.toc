@@ -1,0 +1,128 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Directory Hierarchy}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Directories}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Hierarchical Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Class Hierarchy}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Class Index}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Class List}{5}{section.3.1}%
+\contentsline {chapter}{\numberline {4}File Index}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}File List}{7}{section.4.1}%
+\contentsline {chapter}{\numberline {5}Directory Documentation}{9}{chapter.5}%
+\contentsline {section}{\numberline {5.1}class Directory Reference}{9}{section.5.1}%
+\contentsline {chapter}{\numberline {6}Class Documentation}{11}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Nustatymai Struct Reference}{11}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}Member Data Documentation}{11}{subsection.6.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.1.1}isvestVieta}{11}{subsubsection.6.1.1.1}%
+\contentsline {subsubsection}{\numberline {6.1.1.2}ivestSaltinis}{11}{subsubsection.6.1.1.2}%
+\contentsline {subsubsection}{\numberline {6.1.1.3}pasirink}{11}{subsubsection.6.1.1.3}%
+\contentsline {subsubsection}{\numberline {6.1.1.4}rndPaz}{11}{subsubsection.6.1.1.4}%
+\contentsline {subsubsection}{\numberline {6.1.1.5}rndVard}{12}{subsubsection.6.1.1.5}%
+\contentsline {subsubsection}{\numberline {6.1.1.6}rusBudas}{12}{subsubsection.6.1.1.6}%
+\contentsline {section}{\numberline {6.2}Studentas Class Reference}{12}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}Detailed Description}{14}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}Constructor \& Destructor Documentation}{14}{subsection.6.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.2.1}Studentas()\hspace {0.1cm}{\footnotesize \ttfamily [1/4]}}{14}{subsubsection.6.2.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.2.2}Studentas()\hspace {0.1cm}{\footnotesize \ttfamily [2/4]}}{14}{subsubsection.6.2.2.2}%
+\contentsline {subsubsection}{\numberline {6.2.2.3}Studentas()\hspace {0.1cm}{\footnotesize \ttfamily [3/4]}}{14}{subsubsection.6.2.2.3}%
+\contentsline {subsubsection}{\numberline {6.2.2.4}Studentas()\hspace {0.1cm}{\footnotesize \ttfamily [4/4]}}{14}{subsubsection.6.2.2.4}%
+\contentsline {subsubsection}{\numberline {6.2.2.5}$\sim $Studentas()}{14}{subsubsection.6.2.2.5}%
+\contentsline {subsection}{\numberline {6.2.3}Member Function Documentation}{15}{subsection.6.2.3}%
+\contentsline {subsubsection}{\numberline {6.2.3.1}addTarp()}{15}{subsubsection.6.2.3.1}%
+\contentsline {subsubsection}{\numberline {6.2.3.2}clearTarp()}{15}{subsubsection.6.2.3.2}%
+\contentsline {subsubsection}{\numberline {6.2.3.3}galBalas()}{15}{subsubsection.6.2.3.3}%
+\contentsline {subsubsection}{\numberline {6.2.3.4}getEgz()}{15}{subsubsection.6.2.3.4}%
+\contentsline {subsubsection}{\numberline {6.2.3.5}getGal()}{15}{subsubsection.6.2.3.5}%
+\contentsline {subsubsection}{\numberline {6.2.3.6}getTarp()}{15}{subsubsection.6.2.3.6}%
+\contentsline {subsubsection}{\numberline {6.2.3.7}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{16}{subsubsection.6.2.3.7}%
+\contentsline {subsubsection}{\numberline {6.2.3.8}operator=()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{16}{subsubsection.6.2.3.8}%
+\contentsline {subsubsection}{\numberline {6.2.3.9}readStudent()}{16}{subsubsection.6.2.3.9}%
+\contentsline {subsubsection}{\numberline {6.2.3.10}setEgz()}{16}{subsubsection.6.2.3.10}%
+\contentsline {subsubsection}{\numberline {6.2.3.11}setGal()}{16}{subsubsection.6.2.3.11}%
+\contentsline {subsubsection}{\numberline {6.2.3.12}setTarp()}{16}{subsubsection.6.2.3.12}%
+\contentsline {subsection}{\numberline {6.2.4}Friends And Related Symbol Documentation}{17}{subsection.6.2.4}%
+\contentsline {subsubsection}{\numberline {6.2.4.1}operator$<$$<$}{17}{subsubsection.6.2.4.1}%
+\contentsline {subsubsection}{\numberline {6.2.4.2}operator$>$$>$}{17}{subsubsection.6.2.4.2}%
+\contentsline {section}{\numberline {6.3}Zmogus Class Reference}{17}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Detailed Description}{18}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Constructor \& Destructor Documentation}{18}{subsection.6.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.2.1}Zmogus()\hspace {0.1cm}{\footnotesize \ttfamily [1/2]}}{18}{subsubsection.6.3.2.1}%
+\contentsline {subsubsection}{\numberline {6.3.2.2}Zmogus()\hspace {0.1cm}{\footnotesize \ttfamily [2/2]}}{18}{subsubsection.6.3.2.2}%
+\contentsline {subsubsection}{\numberline {6.3.2.3}$\sim $Zmogus()}{18}{subsubsection.6.3.2.3}%
+\contentsline {subsection}{\numberline {6.3.3}Member Function Documentation}{18}{subsection.6.3.3}%
+\contentsline {subsubsection}{\numberline {6.3.3.1}getPav()}{18}{subsubsection.6.3.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.3.2}getVard()}{18}{subsubsection.6.3.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.3.3}setPav()}{19}{subsubsection.6.3.3.3}%
+\contentsline {subsubsection}{\numberline {6.3.3.4}setVard()}{19}{subsubsection.6.3.3.4}%
+\contentsline {subsection}{\numberline {6.3.4}Member Data Documentation}{19}{subsection.6.3.4}%
+\contentsline {subsubsection}{\numberline {6.3.4.1}pav\_}{19}{subsubsection.6.3.4.1}%
+\contentsline {subsubsection}{\numberline {6.3.4.2}vard\_}{19}{subsubsection.6.3.4.2}%
+\contentsline {chapter}{\numberline {7}File Documentation}{21}{chapter.7}%
+\contentsline {section}{\numberline {7.1}class/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}funkcijos.h File Reference}{21}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Detailed Description}{22}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Function Documentation}{22}{subsection.7.1.2}%
+\contentsline {subsubsection}{\numberline {7.1.2.1}isInt()}{22}{subsubsection.7.1.2.1}%
+\contentsline {subsubsection}{\numberline {7.1.2.2}isvestEkr()}{22}{subsubsection.7.1.2.2}%
+\contentsline {subsubsection}{\numberline {7.1.2.3}isvestIFaila()}{23}{subsubsection.7.1.2.3}%
+\contentsline {subsubsection}{\numberline {7.1.2.4}ivestEkr()}{23}{subsubsection.7.1.2.4}%
+\contentsline {subsubsection}{\numberline {7.1.2.5}ivestIsFailo()}{24}{subsubsection.7.1.2.5}%
+\contentsline {subsubsection}{\numberline {7.1.2.6}klauskEigos()}{24}{subsubsection.7.1.2.6}%
+\contentsline {subsubsection}{\numberline {7.1.2.7}klauskFailo()}{25}{subsubsection.7.1.2.7}%
+\contentsline {subsubsection}{\numberline {7.1.2.8}kurkFaila()}{25}{subsubsection.7.1.2.8}%
+\contentsline {subsubsection}{\numberline {7.1.2.9}rndVardas()}{26}{subsubsection.7.1.2.9}%
+\contentsline {subsubsection}{\numberline {7.1.2.10}rusiuok()}{26}{subsubsection.7.1.2.10}%
+\contentsline {subsubsection}{\numberline {7.1.2.11}skaicGal()}{26}{subsubsection.7.1.2.11}%
+\contentsline {subsubsection}{\numberline {7.1.2.12}skirstyk()}{27}{subsubsection.7.1.2.12}%
+\contentsline {subsubsection}{\numberline {7.1.2.13}validInput()}{27}{subsubsection.7.1.2.13}%
+\contentsline {subsubsection}{\numberline {7.1.2.14}validLength()}{27}{subsubsection.7.1.2.14}%
+\contentsline {subsubsection}{\numberline {7.1.2.15}validRange()}{28}{subsubsection.7.1.2.15}%
+\contentsline {section}{\numberline {7.2}funkcijos.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{28}{section.7.2}%
+\contentsline {section}{\numberline {7.3}class/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}input.cpp File Reference}{29}{section.7.3}%
+\contentsline {subsection}{\numberline {7.3.1}Detailed Description}{29}{subsection.7.3.1}%
+\contentsline {subsection}{\numberline {7.3.2}Function Documentation}{29}{subsection.7.3.2}%
+\contentsline {subsubsection}{\numberline {7.3.2.1}isInt()}{29}{subsubsection.7.3.2.1}%
+\contentsline {subsubsection}{\numberline {7.3.2.2}ivestEkr()}{30}{subsubsection.7.3.2.2}%
+\contentsline {subsubsection}{\numberline {7.3.2.3}ivestIsFailo()}{30}{subsubsection.7.3.2.3}%
+\contentsline {subsubsection}{\numberline {7.3.2.4}klauskEigos()}{31}{subsubsection.7.3.2.4}%
+\contentsline {subsubsection}{\numberline {7.3.2.5}klauskFailo()}{31}{subsubsection.7.3.2.5}%
+\contentsline {subsubsection}{\numberline {7.3.2.6}validInput()}{32}{subsubsection.7.3.2.6}%
+\contentsline {subsubsection}{\numberline {7.3.2.7}validLength()}{32}{subsubsection.7.3.2.7}%
+\contentsline {subsubsection}{\numberline {7.3.2.8}validRange()}{33}{subsubsection.7.3.2.8}%
+\contentsline {section}{\numberline {7.4}class/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}main.cpp File Reference}{33}{section.7.4}%
+\contentsline {subsection}{\numberline {7.4.1}Detailed Description}{33}{subsection.7.4.1}%
+\contentsline {subsection}{\numberline {7.4.2}Function Documentation}{34}{subsection.7.4.2}%
+\contentsline {subsubsection}{\numberline {7.4.2.1}main()}{34}{subsubsection.7.4.2.1}%
+\contentsline {section}{\numberline {7.5}class/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}output.cpp File Reference}{34}{section.7.5}%
+\contentsline {subsection}{\numberline {7.5.1}Detailed Description}{34}{subsection.7.5.1}%
+\contentsline {subsection}{\numberline {7.5.2}Function Documentation}{35}{subsection.7.5.2}%
+\contentsline {subsubsection}{\numberline {7.5.2.1}isvestEkr()}{35}{subsubsection.7.5.2.1}%
+\contentsline {subsubsection}{\numberline {7.5.2.2}isvestIFaila()}{35}{subsubsection.7.5.2.2}%
+\contentsline {subsubsection}{\numberline {7.5.2.3}kurkFaila()}{36}{subsubsection.7.5.2.3}%
+\contentsline {subsubsection}{\numberline {7.5.2.4}rndVardas()}{36}{subsubsection.7.5.2.4}%
+\contentsline {subsubsection}{\numberline {7.5.2.5}rusiuok()}{37}{subsubsection.7.5.2.5}%
+\contentsline {subsubsection}{\numberline {7.5.2.6}skaicGal()}{37}{subsubsection.7.5.2.6}%
+\contentsline {subsubsection}{\numberline {7.5.2.7}skirstyk()}{37}{subsubsection.7.5.2.7}%
+\contentsline {section}{\numberline {7.6}class/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}strukturos.h File Reference}{37}{section.7.6}%
+\contentsline {subsection}{\numberline {7.6.1}Detailed Description}{38}{subsection.7.6.1}%
+\contentsline {section}{\numberline {7.7}strukturos.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{38}{section.7.7}%
+\contentsline {section}{\numberline {7.8}class/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}studentas.cpp File Reference}{38}{section.7.8}%
+\contentsline {subsection}{\numberline {7.8.1}Detailed Description}{38}{subsection.7.8.1}%
+\contentsline {subsection}{\numberline {7.8.2}Function Documentation}{39}{subsection.7.8.2}%
+\contentsline {subsubsection}{\numberline {7.8.2.1}compare()}{39}{subsubsection.7.8.2.1}%
+\contentsline {subsubsection}{\numberline {7.8.2.2}comparePagalGal()}{39}{subsubsection.7.8.2.2}%
+\contentsline {subsubsection}{\numberline {7.8.2.3}comparePagalPavarde()}{39}{subsubsection.7.8.2.3}%
+\contentsline {subsubsection}{\numberline {7.8.2.4}operator$<$$<$()}{39}{subsubsection.7.8.2.4}%
+\contentsline {subsubsection}{\numberline {7.8.2.5}operator$>$$>$()}{39}{subsubsection.7.8.2.5}%
+\contentsline {section}{\numberline {7.9}class/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}studentas.h File Reference}{39}{section.7.9}%
+\contentsline {subsection}{\numberline {7.9.1}Detailed Description}{40}{subsection.7.9.1}%
+\contentsline {subsection}{\numberline {7.9.2}Function Documentation}{40}{subsection.7.9.2}%
+\contentsline {subsubsection}{\numberline {7.9.2.1}compare()}{40}{subsubsection.7.9.2.1}%
+\contentsline {subsubsection}{\numberline {7.9.2.2}comparePagalGal()}{40}{subsubsection.7.9.2.2}%
+\contentsline {subsubsection}{\numberline {7.9.2.3}comparePagalPavarde()}{40}{subsubsection.7.9.2.3}%
+\contentsline {section}{\numberline {7.10}studentas.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{41}{section.7.10}%
+\contentsline {section}{\numberline {7.11}class/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}test\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}\_\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}studentas.cpp File Reference}{41}{section.7.11}%
+\contentsline {subsection}{\numberline {7.11.1}Detailed Description}{42}{subsection.7.11.1}%
+\contentsline {subsection}{\numberline {7.11.2}Function Documentation}{42}{subsection.7.11.2}%
+\contentsline {subsubsection}{\numberline {7.11.2.1}main()}{42}{subsubsection.7.11.2.1}%
+\contentsline {section}{\numberline {7.12}class/\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}zmogus.h File Reference}{42}{section.7.12}%
+\contentsline {subsection}{\numberline {7.12.1}Detailed Description}{42}{subsection.7.12.1}%
+\contentsline {section}{\numberline {7.13}zmogus.\discretionary {\mbox {\scriptsize $\hookleftarrow $}}{}{}h}{42}{section.7.13}%

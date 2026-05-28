@@ -1,0 +1,400 @@
+\doxysection{class/\+funkcijos.h File Reference}
+\hypertarget{funkcijos_8h}{}\label{funkcijos_8h}\index{class/funkcijos.h@{class/funkcijos.h}}
+
+
+Programos pagalbinės funkcijos:\+ įvestis/\+išvestis, validacija, ir kt.  
+
+
+{\ttfamily \+\#include $<$vector$>$}\newline
+{\ttfamily \+\#include $<$string$>$}\newline
+{\ttfamily \+\#include "{}strukturos.\+h"{}}\newline
+{\ttfamily \+\#include "{}studentas.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{funkcijos_8h_a9e73d18db5216f4df9d6a0cb31b8a94c}{ivest\+Ekr}} (vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai, bool rnd\+Paz, bool rnd\+Vard)
+\begin{DoxyCompactList}\small\item\em Įveda studentus iš ekrano arba juos sugeneruoja. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{funkcijos_8h_aa401f5200185c0b37f7bdc610fac0759}{ivest\+Is\+Failo}} (vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai, string failo\+Kelias, bool \&klaida)
+\begin{DoxyCompactList}\small\item\em Nuskaito studentų duomenis iš failo. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{funkcijos_8h_aff443495af8e0f2e96bbf61e98bb1a53}{isvest\+Ekr}} (const vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai, int pasirink)
+\begin{DoxyCompactList}\small\item\em Išveda studentus į ekraną. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{funkcijos_8h_ab1ef7335989ae8a047b482e2f5e0a0e7}{isvest\+IFaila}} (const vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai, int pasirink, string failo\+Pav="{}isvestis.\+txt"{})
+\begin{DoxyCompactList}\small\item\em Išsaugo studentų sąrašą į failą. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{funkcijos_8h_a500d95e2dd313034ed99259ec483042a}{skaic\+Gal}} (vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai, int pasirink)
+\begin{DoxyCompactList}\small\item\em Apskaičiuoja visų studentų galutinius balus. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{funkcijos_8h_af7f91f5f73706e395f2ddec29ad6f2ee}{is\+Int}} (string inp)
+\begin{DoxyCompactList}\small\item\em Tikrina ar eilutė yra sveikasis skaičius. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{funkcijos_8h_a6be017955d80184319d3673b17b8a9a6}{valid\+Input}} (string prompt)
+\begin{DoxyCompactList}\small\item\em Perskaito ir validuoja sveiką įvestį iš vartotojo. \end{DoxyCompactList}\item 
+int \doxymbox{\hyperlink{funkcijos_8h_a2a67efbf9303435506d2945818f3b15b}{valid\+Range}} (int from, int to, string prompt)
+\begin{DoxyCompactList}\small\item\em Validuoja įvestą skaičių intervale \+[from, to]\+. \end{DoxyCompactList}\item 
+string \doxymbox{\hyperlink{funkcijos_8h_a03a9b5f6f831b1d6d3d3a84c67ea1cb1}{valid\+Length}} (int max\+Length, string prompt)
+\begin{DoxyCompactList}\small\item\em Tikrina tekstinio lauko ilgį ir grąžina galutinį tekstą. \end{DoxyCompactList}\item 
+string \doxymbox{\hyperlink{funkcijos_8h_a81b51147c6eb391f150b37b2bf23aaf2}{rnd\+Vardas}} (int from, int to)
+\begin{DoxyCompactList}\small\item\em Sugeneruoja atsitiktinį vardą/\+pavardę nurodytu ilgio intervale. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{funkcijos_8h_ace85bd0121c080e6ec2ab49afa8e3d86}{klausk\+Eigos}} (bool \&testi, \doxymbox{\hyperlink{struct_nustatymai}{Nustatymai}} \&nustatymai)
+\begin{DoxyCompactList}\small\item\em Užduoda vartotojui programos eigą ir užpildo {\ttfamily \doxylink{struct_nustatymai}{Nustatymai}}. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{funkcijos_8h_ac725b2c649b592e7e0c6621314191ea9}{rusiuok}} (vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai, int rus\+Budas)
+\begin{DoxyCompactList}\small\item\em Rūšiuoja studentus pagal pasirinktą kriterijų. \end{DoxyCompactList}\item 
+string \doxymbox{\hyperlink{funkcijos_8h_aa0ae3afe7bdd994adccc031bd7a0de12}{klausk\+Failo}} (bool \&klaida)
+\begin{DoxyCompactList}\small\item\em Leidžia vartotojui pasirinkti įvesties failą arba sugeneruoti naują. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{funkcijos_8h_ae684097cf7237095e17606debda3be4e}{skirstyk}} (vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&studentai, vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&vargsiukai)
+\begin{DoxyCompactList}\small\item\em Atskiria į dvi grupes:\+ silpnesnius ir stipresnius studentus. \end{DoxyCompactList}\item 
+string \doxymbox{\hyperlink{funkcijos_8h_a8c94f6b339fab597784ad872268e1249}{kurk\+Faila}} (int stud\+Sk, int paz\+Sk)
+\begin{DoxyCompactList}\small\item\em Sukuria atsitiktinį įvesties failą su nurodytu studentų ir pažymių skaičiumi. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Programos pagalbinės funkcijos:\+ įvestis/\+išvestis, validacija, ir kt. 
+
+
+
+\label{funkcijos_8h_doc-func-members}
+\Hypertarget{funkcijos_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{funkcijos_8h_af7f91f5f73706e395f2ddec29ad6f2ee}\index{funkcijos.h@{funkcijos.h}!isInt@{isInt}}
+\index{isInt@{isInt}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{isInt()}{isInt()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_af7f91f5f73706e395f2ddec29ad6f2ee} 
+bool is\+Int (\begin{DoxyParamCaption}\item[{string}]{inp}{}\end{DoxyParamCaption})}
+
+
+
+Tikrina ar eilutė yra sveikasis skaičius. 
+
+Tikrina ar pateikta eilutė atitinka sveiko skaičiaus formatą.
+
+Tikrina ar eilutė yra sveikasis skaičius. \Hypertarget{funkcijos_8h_aff443495af8e0f2e96bbf61e98bb1a53}\index{funkcijos.h@{funkcijos.h}!isvestEkr@{isvestEkr}}
+\index{isvestEkr@{isvestEkr}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{isvestEkr()}{isvestEkr()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_aff443495af8e0f2e96bbf61e98bb1a53} 
+void isvest\+Ekr (\begin{DoxyParamCaption}\item[{const vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{studentai}{, }\item[{int}]{pasirink}{}\end{DoxyParamCaption})}
+
+
+
+Išveda studentus į ekraną. 
+
+Išveda studentų sąrašą į konsolę.
+
+Išveda studentus į ekraną.
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & Studentų vektorius. \\
+\hline
+{\em pasirink} & Galutinio balo skaičiavimo metodas (1 -\/ vid., 2 -\/ med.). \\
+\hline
+\end{DoxyParams}
+\Hypertarget{funkcijos_8h_ab1ef7335989ae8a047b482e2f5e0a0e7}\index{funkcijos.h@{funkcijos.h}!isvestIFaila@{isvestIFaila}}
+\index{isvestIFaila@{isvestIFaila}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{isvestIFaila()}{isvestIFaila()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_ab1ef7335989ae8a047b482e2f5e0a0e7} 
+void isvest\+IFaila (\begin{DoxyParamCaption}\item[{const vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{studentai}{, }\item[{int}]{pasirink}{, }\item[{string}]{failo\+Pav}{}\end{DoxyParamCaption})}
+
+
+
+Išsaugo studentų sąrašą į failą. 
+
+Išsaugo studentų sąrašą į nurodytą failą.
+
+
+\begin{DoxyParams}{Parameters}
+{\em failo\+Pav} & Pasirinktinai -\/ išeities failo pavadinimas.\\
+\hline
+\end{DoxyParams}
+Išsaugo studentų sąrašą į failą.
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & Studentų vektorius. \\
+\hline
+{\em pasirink} & Galutinio balo skaičiavimo metodas. \\
+\hline
+{\em failo\+Pav} & Išeities failo pavadinimas. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{funkcijos_8h_a9e73d18db5216f4df9d6a0cb31b8a94c}\index{funkcijos.h@{funkcijos.h}!ivestEkr@{ivestEkr}}
+\index{ivestEkr@{ivestEkr}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{ivestEkr()}{ivestEkr()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_a9e73d18db5216f4df9d6a0cb31b8a94c} 
+void ivest\+Ekr (\begin{DoxyParamCaption}\item[{vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{studentai}{, }\item[{bool}]{rnd\+Paz}{, }\item[{bool}]{rnd\+Vard}{}\end{DoxyParamCaption})}
+
+
+
+Įveda studentus iš ekrano arba juos sugeneruoja. 
+
+Interaktyviai įveda arba generuoja studentų duomenis.
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & Rezultatinis studentų vektorius (pridedami elementai). \\
+\hline
+{\em rnd\+Paz} & Ar generuoti tarpinius pažymius atsitiktinai. \\
+\hline
+{\em rnd\+Vard} & Ar generuoti vardus/\+pavardes atsitiktinai.\\
+\hline
+\end{DoxyParams}
+Įveda studentus iš ekrano arba juos sugeneruoja.
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & Rezultatinis studentų vektorius. \\
+\hline
+{\em rnd\+Paz} & Ar generuoti pažymius atsitiktinai. \\
+\hline
+{\em rnd\+Vard} & Ar generuoti vardus/\+pavardes atsitiktinai. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{funkcijos_8h_aa401f5200185c0b37f7bdc610fac0759}\index{funkcijos.h@{funkcijos.h}!ivestIsFailo@{ivestIsFailo}}
+\index{ivestIsFailo@{ivestIsFailo}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{ivestIsFailo()}{ivestIsFailo()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_aa401f5200185c0b37f7bdc610fac0759} 
+void ivest\+Is\+Failo (\begin{DoxyParamCaption}\item[{vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{studentai}{, }\item[{string}]{failo\+Kelias}{, }\item[{bool \&}]{klaida}{}\end{DoxyParamCaption})}
+
+
+
+Nuskaito studentų duomenis iš failo. 
+
+Nuskaito studentų duomenis iš nurodyto failo.
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & Rezultatinis studentų vektorius. \\
+\hline
+{\em failo\+Kelias} & Įvesties failo kelias. \\
+\hline
+{\em klaida} & Išeities parametras:\+ true jei įvyko klaida.\\
+\hline
+\end{DoxyParams}
+Nuskaito studentų duomenis iš failo.
+
+
+\begin{DoxyParams}{Parameters}
+{\em studentai} & Rezultatinis studentų vektorius. \\
+\hline
+{\em failo\+Kelias} & Įvesties failo kelias. \\
+\hline
+{\em klaida} & Išeities parametras:\+ true jei įvyko klaida. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{funkcijos_8h_ace85bd0121c080e6ec2ab49afa8e3d86}\index{funkcijos.h@{funkcijos.h}!klauskEigos@{klauskEigos}}
+\index{klauskEigos@{klauskEigos}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{klauskEigos()}{klauskEigos()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_ace85bd0121c080e6ec2ab49afa8e3d86} 
+void klausk\+Eigos (\begin{DoxyParamCaption}\item[{bool \&}]{testi}{, }\item[{\doxymbox{\hyperlink{struct_nustatymai}{Nustatymai}} \&}]{nustatymai}{}\end{DoxyParamCaption})}
+
+
+
+Užduoda vartotojui programos eigą ir užpildo {\ttfamily \doxylink{struct_nustatymai}{Nustatymai}}. 
+
+Užduoda vartotojui programos eigą ir užpildo {\ttfamily \doxylink{struct_nustatymai}{Nustatymai}} struktūrą.
+
+
+\begin{DoxyParams}{Parameters}
+{\em testi} & Išeities parametras:\+ ar tęsti programą. \\
+\hline
+{\em nustatymai} & Išvedami pasirinkimai.\\
+\hline
+\end{DoxyParams}
+Užduoda vartotojui programos eigą ir užpildo {\ttfamily \doxylink{struct_nustatymai}{Nustatymai}}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em testi} & Išeities parametras:\+ ar tęsti programą. \\
+\hline
+{\em nustatymai} & Parametrų struktūra, pildoma pagal pasirinkimus. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{funkcijos_8h_aa0ae3afe7bdd994adccc031bd7a0de12}\index{funkcijos.h@{funkcijos.h}!klauskFailo@{klauskFailo}}
+\index{klauskFailo@{klauskFailo}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{klauskFailo()}{klauskFailo()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_aa0ae3afe7bdd994adccc031bd7a0de12} 
+string klausk\+Failo (\begin{DoxyParamCaption}\item[{bool \&}]{klaida}{}\end{DoxyParamCaption})}
+
+
+
+Leidžia vartotojui pasirinkti įvesties failą arba sugeneruoti naują. 
+
+Leidžia vartotojui pasirinkti įvesties failą iš katalogo arba sugeneruoti naują.
+
+
+\begin{DoxyParams}{Parameters}
+{\em klaida} & Išeities parametras:\+ true jei įvyko klaida. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Grąžina pasirinkto failo kelią arba sugeneruoto failo kelią.
+\end{DoxyReturn}
+Leidžia vartotojui pasirinkti įvesties failą arba sugeneruoti naują.
+
+
+\begin{DoxyParams}{Parameters}
+{\em klaida} & Išeities parametras:\+ true jei įvyko klaida skaitant katalogą. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Grąžina pasirinkto arba sugeneruoto failo kelią. 
+\end{DoxyReturn}
+\Hypertarget{funkcijos_8h_a8c94f6b339fab597784ad872268e1249}\index{funkcijos.h@{funkcijos.h}!kurkFaila@{kurkFaila}}
+\index{kurkFaila@{kurkFaila}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{kurkFaila()}{kurkFaila()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_a8c94f6b339fab597784ad872268e1249} 
+string kurk\+Faila (\begin{DoxyParamCaption}\item[{int}]{stud\+Sk}{, }\item[{int}]{paz\+Sk}{}\end{DoxyParamCaption})}
+
+
+
+Sukuria atsitiktinį įvesties failą su nurodytu studentų ir pažymių skaičiumi. 
+
+Sugeneruoja įvesties failą su atsitiktiniais duomenimis.
+
+Sukuria atsitiktinį įvesties failą su nurodytu studentų ir pažymių skaičiumi.
+
+
+\begin{DoxyParams}{Parameters}
+{\em stud\+Sk} & Studentų skaičius. \\
+\hline
+{\em paz\+Sk} & Pažymių skaičius kiekvienam studentui. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Sugeneruoto failo kelias. 
+\end{DoxyReturn}
+\Hypertarget{funkcijos_8h_a81b51147c6eb391f150b37b2bf23aaf2}\index{funkcijos.h@{funkcijos.h}!rndVardas@{rndVardas}}
+\index{rndVardas@{rndVardas}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{rndVardas()}{rndVardas()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_a81b51147c6eb391f150b37b2bf23aaf2} 
+string rnd\+Vardas (\begin{DoxyParamCaption}\item[{int}]{from}{, }\item[{int}]{to}{}\end{DoxyParamCaption})}
+
+
+
+Sugeneruoja atsitiktinį vardą/\+pavardę nurodytu ilgio intervale. 
+
+Sugeneruoja atsitiktinį vardą/\+pavardę nurodytu ilgiu.
+
+Sugeneruoja atsitiktinį vardą/\+pavardę nurodytu ilgio intervale.
+
+
+\begin{DoxyParams}{Parameters}
+{\em from} & Minimalus simbolių skaičius. \\
+\hline
+{\em to} & Maksimalus simbolių skaičius. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Sugeneruotas tekstas. 
+\end{DoxyReturn}
+\Hypertarget{funkcijos_8h_ac725b2c649b592e7e0c6621314191ea9}\index{funkcijos.h@{funkcijos.h}!rusiuok@{rusiuok}}
+\index{rusiuok@{rusiuok}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{rusiuok()}{rusiuok()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_ac725b2c649b592e7e0c6621314191ea9} 
+void rusiuok (\begin{DoxyParamCaption}\item[{vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{studentai}{, }\item[{int}]{rus\+Budas}{}\end{DoxyParamCaption})}
+
+
+
+Rūšiuoja studentus pagal pasirinktą kriterijų. 
+
+Rūšiuoja studentus pagal pasirinkimą.
+
+Rūšiuoja studentus pagal pasirinktą kriterijų.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rus\+Budas} & 1-\/vardas, 2-\/pavardė, 3-\/galutinis balas \\
+\hline
+\end{DoxyParams}
+\Hypertarget{funkcijos_8h_a500d95e2dd313034ed99259ec483042a}\index{funkcijos.h@{funkcijos.h}!skaicGal@{skaicGal}}
+\index{skaicGal@{skaicGal}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{skaicGal()}{skaicGal()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_a500d95e2dd313034ed99259ec483042a} 
+void skaic\+Gal (\begin{DoxyParamCaption}\item[{vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{studentai}{, }\item[{int}]{pasirink}{}\end{DoxyParamCaption})}
+
+
+
+Apskaičiuoja visų studentų galutinius balus. 
+
+Apskaičiuoja ir nustato kiekvieno studento galutinį balą.
+
+Apskaičiuoja visų studentų galutinius balus. \Hypertarget{funkcijos_8h_ae684097cf7237095e17606debda3be4e}\index{funkcijos.h@{funkcijos.h}!skirstyk@{skirstyk}}
+\index{skirstyk@{skirstyk}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{skirstyk()}{skirstyk()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_ae684097cf7237095e17606debda3be4e} 
+void skirstyk (\begin{DoxyParamCaption}\item[{vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{studentai}{, }\item[{vector$<$ \doxymbox{\hyperlink{class_studentas}{Studentas}} $>$ \&}]{vargsiukai}{}\end{DoxyParamCaption})}
+
+
+
+Atskiria į dvi grupes:\+ silpnesnius ir stipresnius studentus. 
+
+Atskiria silpniausius studentus į atskirą vektorių {\ttfamily vargsiukai}.
+
+Atskiria į dvi grupes:\+ silpnesnius ir stipresnius studentus. \Hypertarget{funkcijos_8h_a6be017955d80184319d3673b17b8a9a6}\index{funkcijos.h@{funkcijos.h}!validInput@{validInput}}
+\index{validInput@{validInput}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{validInput()}{validInput()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_a6be017955d80184319d3673b17b8a9a6} 
+int valid\+Input (\begin{DoxyParamCaption}\item[{string}]{prompt}{}\end{DoxyParamCaption})}
+
+
+
+Perskaito ir validuoja sveiką įvestį iš vartotojo. 
+
+Perskaito vartotojo įvestį ir grąžina sveiką skaičių.
+
+Perskaito ir validuoja sveiką įvestį iš vartotojo.
+
+
+\begin{DoxyParams}{Parameters}
+{\em prompt} & Prašymas vartotojui. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Perskaitytas sveikasis skaičius. 
+\end{DoxyReturn}
+\Hypertarget{funkcijos_8h_a03a9b5f6f831b1d6d3d3a84c67ea1cb1}\index{funkcijos.h@{funkcijos.h}!validLength@{validLength}}
+\index{validLength@{validLength}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{validLength()}{validLength()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_a03a9b5f6f831b1d6d3d3a84c67ea1cb1} 
+string valid\+Length (\begin{DoxyParamCaption}\item[{int}]{max\+Length}{, }\item[{string}]{prompt}{}\end{DoxyParamCaption})}
+
+
+
+Tikrina tekstinio lauko ilgį ir grąžina galutinį tekstą. 
+
+Patikrina įvesto teksto ilgį ir grąžina galutinį tekstą.
+
+Tikrina tekstinio lauko ilgį ir grąžina galutinį tekstą.
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Length} & Maksimalus ilgis. \\
+\hline
+{\em prompt} & Prašymas vartotojui. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Galutinis tekstas (jei tuščias, grąžinama "{}\+Nenurodyta"{}). 
+\end{DoxyReturn}
+\Hypertarget{funkcijos_8h_a2a67efbf9303435506d2945818f3b15b}\index{funkcijos.h@{funkcijos.h}!validRange@{validRange}}
+\index{validRange@{validRange}!funkcijos.h@{funkcijos.h}}
+\doxysubsubsection{\texorpdfstring{validRange()}{validRange()}}
+{\footnotesize\ttfamily \label{funkcijos_8h_a2a67efbf9303435506d2945818f3b15b} 
+int valid\+Range (\begin{DoxyParamCaption}\item[{int}]{from}{, }\item[{int}]{to}{, }\item[{string}]{prompt}{}\end{DoxyParamCaption})}
+
+
+
+Validuoja įvestą skaičių intervale \+[from, to]\+. 
+
+Patikrina, ar įvestas skaičius yra nurodytame intervale.
+
+Validuoja įvestą skaičių intervale \+[from, to]\+.
+
+
+\begin{DoxyParams}{Parameters}
+{\em from} & Intervalo pradžia. \\
+\hline
+{\em to} & Intervalo pabaiga. \\
+\hline
+{\em prompt} & Prašymas vartotojui. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Validuotas skaičius intervale. 
+\end{DoxyReturn}

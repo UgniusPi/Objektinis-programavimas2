@@ -1,3 +1,8 @@
+/**
+ * @file output.cpp
+ * @brief Išvesties ir pagalbinių funkcijų įgyvendinimai.
+ */
+
 #include <iostream>
 #include <vector>
 #include <iomanip>
@@ -21,6 +26,11 @@ using std::ofstream;
 using std::to_string;
 using std::filesystem::create_directories;
 
+/**
+ * @brief Išveda studentų sąrašą į konsolę.
+ * @param studentai Studentų vektorius.
+ * @param pasirink Galutinio balo skaičiavimo metodas (1 - vid., 2 - med.).
+ */
 void isvestEkr(const vector<Studentas> &studentai, int pasirink) {
     string galTekstas = (pasirink == 1) ? "Galutinis (Vid.)" : "Galutinis (Med.)";
     
@@ -33,12 +43,19 @@ void isvestEkr(const vector<Studentas> &studentai, int pasirink) {
     cout << "\n\n";
 }
 
+/** @brief Apskaičiuoja ir nustato kiekvieno studento galutinį balą. */
 void skaicGal(vector<Studentas> &studentai, int pasirink) {
     for (auto &stud : studentai) {
         stud.setGal(stud.galBalas(pasirink));
     }
 }
 
+/**
+ * @brief Sugeneruoja atsitiktinį vardą/pavardę nurodytu ilgiu.
+ * @param from Minimalus simbolių skaičius.
+ * @param to Maksimalus simbolių skaičius.
+ * @return Sugeneruotas tekstas.
+ */
 string rndVardas(int from, int to) {
     string vard;
     int raidSk = rand() % (to - from + 1) + from;
@@ -51,6 +68,12 @@ string rndVardas(int from, int to) {
     return vard;
 }
 
+/**
+ * @brief Išsaugo studentų sąrašą į nurodytą failą.
+ * @param studentai Studentų vektorius.
+ * @param pasirink Galutinio balo skaičiavimo metodas.
+ * @param failoPav Išeities failo pavadinimas.
+ */
 void isvestIFaila(const vector<Studentas> &studentai, int pasirink, string failoPav) {
     string failoKelias = "isvestis/" + failoPav;
     create_directories("isvestis");
@@ -65,6 +88,10 @@ void isvestIFaila(const vector<Studentas> &studentai, int pasirink, string failo
     }
 }
 
+/**
+ * @brief Rūšiuoja studentus pagal pasirinkimą.
+ * @param rusBudas 1-vardas, 2-pavardė, 3-galutinis balas
+ */
 void rusiuok(vector<Studentas> &studentai, int rusBudas) {
     if (rusBudas == 1) {
         sort(studentai.begin(), studentai.end(), compare);
@@ -77,6 +104,12 @@ void rusiuok(vector<Studentas> &studentai, int rusBudas) {
     }
 }
 
+/**
+ * @brief Sugeneruoja įvesties failą su atsitiktiniais duomenimis.
+ * @param studSk Studentų skaičius.
+ * @param pazSk Pažymių skaičius kiekvienam studentui.
+ * @return Sugeneruoto failo kelias.
+ */
 string kurkFaila(int studSk, int pazSk) {
     string failoPav = "stud" + to_string(studSk) + ".txt";
     string failoKelias = "ivestis/" + failoPav;
@@ -101,6 +134,7 @@ string kurkFaila(int studSk, int pazSk) {
     return failoKelias;
 }
 
+/** @brief Atskiria silpniausius studentus į atskirą vektorių `vargsiukai`. */
 void skirstyk(vector<Studentas> &studentai, vector<Studentas> &vargsiukai) {
     auto mid = std::stable_partition(studentai.begin(), studentai.end(), [](const Studentas &s){ return s.getGal() < 5; });
 

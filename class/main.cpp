@@ -1,3 +1,8 @@
+/**
+ * @file main.cpp
+ * @brief Programos paleidimo taškas.
+ */
+
 #include <iostream>
 #include <vector>
 #include <string>
@@ -13,6 +18,10 @@ using std::cin;
 using std::chrono::high_resolution_clock;
 using std::chrono::duration;
 
+/**
+ * @brief Pagrindinė programos funkcija.
+ * @return Programos išėjimo kodas (0 - sėkmė, 1 - klaida).
+ */
 int main() {
     srand(time(0));
 
