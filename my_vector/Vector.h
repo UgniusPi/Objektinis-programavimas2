@@ -54,5 +54,17 @@ public:
     size_type capacity() const noexcept;
     void reserve(size_type newCap);
     void shrink_to_fit();
+
+    // Element access
+    reference operator[](size_type idx);
+    const_reference operator[](size_type idx) const;
+    reference at(size_type idx);
+    const_reference at(size_type idx) const;
+    reference front();
+    const_reference front() const;
+    reference back();
+    const_reference back() const;
+    pointer data() noexcept;
+    const_pointer data() const noexcept;
 };
 } // namespace mystl
