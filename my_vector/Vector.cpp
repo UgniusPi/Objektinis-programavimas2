@@ -204,4 +204,38 @@ void Vector<T>::emplace_back(Args&&... args) {
     new (data_ + size_) T(std::forward<Args>(args)...);
     ++size_;
 }
+
+template<typename T>
+void Vector<T>::pop_back() {
+    if (size_ == 0) return;
+    --size_;
+    data_[size_].~T();
+}
+
+template<typename T>
+typename Vector<T>::iterator Vector<T>::insert(const_iterator pos, const T& value) {
+    size_type idx = pos - data_;
+    if (idx > size_) idx = size_;
+    if (size_ == cap_) reserve(cap_ ? cap_ * 2 : 1);
+    for (size_type i = size_; i > idx; --i) {
+        new (data_ + i) T(std::move(data_[i - 1]));
+        data_[i - 1].~T();
+    }
+    new (data_ + idx) T(value);
+    ++size_;
+    return data_ + idx;
+}
+
+template<typename T>
+typename Vector<T>::iterator Vector<T>::erase(const_iterator pos) {
+    size_type idx = pos - data_;
+    if (idx >= size_) return end();
+    data_[idx].~T();
+    for (size_type i = idx; i < size_ - 1; ++i) {
+        new (data_ + i) T(std::move(data_[i + 1]));
+        data_[i + 1].~T();
+    }
+    --size_;
+    return data_ + idx;
+}
 } // namespace mystl
