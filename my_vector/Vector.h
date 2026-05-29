@@ -27,5 +27,15 @@ private:
 
     // Allocate new storage and move elements
     void reallocate(size_type newCap);
+
+public:
+    // Constructors / destructor / assignment
+    Vector() noexcept;
+    explicit Vector(size_type count, const T& value = T());
+    Vector(std::initializer_list<T> il);
+    Vector(const Vector& other);
+    Vector(Vector&& other) noexcept;
+    ~Vector();
+};
 };
 } // namespace mystl
