@@ -70,7 +70,7 @@ Jei norite, galiu:
 
 **Perskirstymų skaičiaus palyginimas (100 000 000 elementų)**
 
-- **Užduotis:** Palyginti, kiek kartų vyksta atminties perskirstymai (`realloc` įvykiai) `užpildant konteinerį 100 000 000 `int` elementų, kai perskirstymas skaičiuojamas kaip įvykis, kai prieš `push_back()` tenkinama sąlyga `capacity() == size()`.
+- **Užduotis:** Palyginti, kiek kartų vyksta atminties perskirstymai (`realloc` įvykiai)` užpildant konteinerį 100 000 000 `int` elementų, kai perskirstymas skaičiuojamas kaip įvykis, kai prieš `push_back()` tenkinama sąlyga `capacity() == size()`.
 - **Kodas:** [my_vector/realloc_count.cpp](my_vector/realloc_count.cpp) — prieš kiekvieną `push_back()` tikrinamas `capacity() == size()` ir jei sąlyga tenkinama, skaičiuojamas perskirstymas.
 - **Kompiliavimas ir paleidimas:**
 
@@ -94,6 +94,84 @@ mystl::Vector: reallocations=28, time_ms=970.929
 	- Jei jus domina tik perskirstymų skaičius, abu konteineriai elgiasi vienodai (tame pačiame augimo modelyje).
 	- Jei jus domina ir veikimo trukmė, `std::vector` vis dar pranašesnis dėl papildomų optimizacijų.
 
+**Skirtingų vector konteinių spartos tyrimas**
 
+std::vector:
+
+
+100000:
+
+ivestIsFailo: nuskaitymas ir push_back uztruko: 0.180021 s
+Duomenu nuskaitymas is failo i konteineri uztruko: 0.226829
+skaicGal: apskaiciavimo laikas: 0.0094858 s
+Studentu rusiavimas konteineryje uztruko: 0.0445399
+skirstyk: partition=0.0072431 s, assign=0.0063822 s, erase=0.0054604 s
+Studentu skirstymas i grupes uztruko: 0.0197153
+isvestIFaila: isvedimas i faila uztruko: 0.0344426 s
+isvestIFaila: isvedimas i faila uztruko: 0.0481716 s
+
+
+1000000:
+
+ivestIsFailo: nuskaitymas ir push_back uztruko: 1.79424 s
+Duomenu nuskaitymas is failo i konteineri uztruko: 2.21212
+skaicGal: apskaiciavimo laikas: 0.0999719 s
+Studentu rusiavimas konteineryje uztruko: 0.60718
+skirstyk: partition=0.0777572 s, assign=0.0633489 s, erase=0.0568642 s
+Studentu skirstymas i grupes uztruko: 0.198887
+isvestIFaila: isvedimas i faila uztruko: 0.366625 s
+isvestIFaila: isvedimas i faila uztruko: 0.487296 s
+
+
+10000000:
+
+ivestIsFailo: nuskaitymas ir push_back uztruko: 20.9718 s
+Duomenu nuskaitymas is failo i konteineri uztruko: 25.169
+skaicGal: apskaiciavimo laikas: 1.13587 s
+Studentu rusiavimas konteineryje uztruko: 8.00124
+skirstyk: partition=0.82658 s, assign=0.82162 s, erase=0.675753 s
+Studentu skirstymas i grupes uztruko: 2.3249
+isvestIFaila: isvedimas i faila uztruko: 4.10205 s
+isvestIFaila: isvedimas i faila uztruko: 5.57096 s
+
+
+
+mystl::Vector:
+
+
+100000:
+
+ivestIsFailo: nuskaitymas ir push_back uztruko: 0.18103 s
+Duomenu nuskaitymas is failo i konteineri uztruko: 0.222815
+skaicGal: apskaiciavimo laikas: 0.0099217 s
+Studentu rusiavimas konteineryje uztruko: 0.048757
+skirstyk: partition=0.005934 s, assign=0.0087127 s, erase=0.003146 s
+Studentu skirstymas i grupes uztruko: 0.0185111
+isvestIFaila: isvedimas i faila uztruko: 0.0347276 s
+isvestIFaila: isvedimas i faila uztruko: 0.0479969 s
+
+
+1000000:
+
+ivestIsFailo: nuskaitymas ir push_back uztruko: 1.80447 s
+Duomenu nuskaitymas is failo i konteineri uztruko: 2.15022
+skaicGal: apskaiciavimo laikas: 0.101666 s
+Studentu rusiavimas konteineryje uztruko: 0.628798
+skirstyk: partition=0.0699775 s, assign=0.0761018 s, erase=0.0466411 s
+Studentu skirstymas i grupes uztruko: 0.193468
+isvestIFaila: isvedimas i faila uztruko: 0.352786 s
+isvestIFaila: isvedimas i faila uztruko: 0.471769 s
+
+
+10000000:
+
+ivestIsFailo: nuskaitymas ir push_back uztruko: 20.3881 s
+Duomenu nuskaitymas is failo i konteineri uztruko: 23.9728
+skaicGal: apskaiciavimo laikas: 1.04508 s
+Studentu rusiavimas konteineryje uztruko: 8.31124
+skirstyk: partition=0.677177 s, assign=0.7592 s, erase=0.498093 s
+Studentu skirstymas i grupes uztruko: 1.93596
+isvestIFaila: isvedimas i faila uztruko: 3.42643 s
+isvestIFaila: isvedimas i faila uztruko: 4.77723 s
 
 

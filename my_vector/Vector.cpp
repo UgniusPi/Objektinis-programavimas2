@@ -4,6 +4,8 @@
 #include <algorithm>
 #include <stdexcept>
 #include <initializer_list>
+#include <filesystem>
+#include "studentas.h"
 
 namespace mystl {
 
@@ -325,6 +327,13 @@ template bool operator!=<std::string>(const Vector<std::string>&, const Vector<s
 template class Vector<Item>;
 template bool operator==<Item>(const Vector<Item>&, const Vector<Item>&);
 template bool operator!=<Item>(const Vector<Item>&, const Vector<Item>&);
+
+// Explicit instantiations for project-specific types used in my_vector
+template class Vector<std::filesystem::path>;
+template bool operator==<std::filesystem::path>(const Vector<std::filesystem::path>&, const Vector<std::filesystem::path>&);
+template bool operator!=<std::filesystem::path>(const Vector<std::filesystem::path>&, const Vector<std::filesystem::path>&);
+
+template class Vector<Studentas>;
 
 // Explicitly instantiate member-template emplace_back for the usage in examples
 template void Vector<Item>::emplace_back<std::string,int>(std::string&&, int&&);
