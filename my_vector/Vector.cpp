@@ -138,4 +138,23 @@ void Vector<T>::shrink_to_fit() {
         }
     }
 }
+
+// Element access
+template<typename T>
+typename Vector<T>::reference Vector<T>::operator[](size_type idx) { return data_[idx]; }
+
+template<typename T>
+typename Vector<T>::const_reference Vector<T>::operator[](size_type idx) const { return data_[idx]; }
+
+template<typename T>
+typename Vector<T>::reference Vector<T>::at(size_type idx) {
+    if (idx >= size_) throw std::out_of_range("Vector::at");
+    return data_[idx];
+}
+
+template<typename T>
+typename Vector<T>::const_reference Vector<T>::at(size_type idx) const {
+    if (idx >= size_) throw std::out_of_range("Vector::at");
+    return data_[idx];
+}
 } // namespace mystl
