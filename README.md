@@ -68,5 +68,32 @@ Jei norite, galiu:
 - Įdiegti optimizuotą kelią `my_vector/Vector.cpp` triviales tipams (naudojant `memmove`) ir vėl paleisti benchmark'ą.
 - Pridėti benchmark kaip `CMake` tikslą, kad būtų lengva paleisti ir kituose aplinkose.
 
+**Perskirstymų skaičiaus palyginimas (100 000 000 elementų)**
+
+- **Užduotis:** Palyginti, kiek kartų vyksta atminties perskirstymai (`realloc` įvykiai) `užpildant konteinerį 100 000 000 `int` elementų, kai perskirstymas skaičiuojamas kaip įvykis, kai prieš `push_back()` tenkinama sąlyga `capacity() == size()`.
+- **Kodas:** [my_vector/realloc_count.cpp](my_vector/realloc_count.cpp) — prieš kiekvieną `push_back()` tikrinamas `capacity() == size()` ir jei sąlyga tenkinama, skaičiuojamas perskirstymas.
+- **Kompiliavimas ir paleidimas:**
+
+```powershell
+g++ -std=c++17 -O2 my_vector/Vector.cpp my_vector/realloc_count.cpp -o my_vector/realloc_count.exe
+.\my_vector\realloc_count.exe
+```
+
+**Rezultatai (vienkartinis paleidimas, N = 100000000):**
+
+```
+Counting reallocations for N=100000000
+std::vector: reallocations=28, time_ms=409.863
+mystl::Vector: reallocations=28, time_ms=970.929
+```
+
+**Paaiškinimas ir išvados:**
+- Abi implementacijos užfiksavo vienodą perskirstymų skaičių — **28**. Tai reiškia, kad talpos didinimo strategija (čia — dvigubinimas: `cap = cap ? cap*2 : 1`) lemia perskirstymų dažnį, nepriklausomai nuo to, kaip elementai yra perkelti į naują buferį.
+- Laiko skirtumas (mystl::Vector žymiai lėtesnis) kyla dėl el. perkėlimo būdo: `std::vector` diegimas gali naudoti optimizuotus žemo lygio operacijų (pvz., `memcpy`/`memmove` trivialiems tipams arba kitus optimizavimo priemonių), tuo tarpu mūsų `mystl::Vector` realokacijos metu perkelia elementus po vieną per placement-new ir iškviečia destruktorius, kas yra lėčiau.
+- Išvados:
+	- Jei jus domina tik perskirstymų skaičius, abu konteineriai elgiasi vienodai (tame pačiame augimo modelyje).
+	- Jei jus domina ir veikimo trukmė, `std::vector` vis dar pranašesnis dėl papildomų optimizacijų.
+
+
 
 
