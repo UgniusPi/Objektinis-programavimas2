@@ -77,8 +77,8 @@ int main() {
 
     // 6) emplace_back with struct
     std::vector<Item> sv6; Vector<Item> mv6;
-    sv6.emplace_back(std::string("Alice"), 30); sv6.emplace_back(std::string("Bob"), 25);
-    mv6.emplace_back(std::string("Alice"), 30); mv6.emplace_back(std::string("Bob"), 25);
+    sv6.emplace_back(std::string("Apple"), 10); sv6.emplace_back(std::string("Banana"), 5);
+    mv6.emplace_back(std::string("Apple"), 10); mv6.emplace_back(std::string("Banana"), 5);
     bool t6 = equal_contents(sv6, mv6);
     print_test_result("emplace_back (construct in place)", t6);
     all_ok &= t6;
