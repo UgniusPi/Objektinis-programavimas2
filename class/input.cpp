@@ -6,6 +6,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <chrono>
 #include <cctype>
 #include <fstream>
 #include <sstream>
@@ -37,8 +38,11 @@ using std::exception;
 void ivestEkr(vector<Studentas> &studentai, bool rndPaz, bool rndVard) {
     int studSk = validInput("Iveskite studentu skaiciu: ");
     cout << "\n";
-    
+    using std::chrono::steady_clock;
+    using std::chrono::duration;
+
     while (true) {
+        auto startFill = steady_clock::now();
         for (int i=0; i<studSk; i++) {
             Studentas naujasStud;
             int tarpSk;
@@ -78,6 +82,9 @@ void ivestEkr(vector<Studentas> &studentai, bool rndPaz, bool rndVard) {
             
             studentai.push_back(std::move(naujasStud));
         } 
+        auto endFill = steady_clock::now();
+        duration<double> fillElapsed = endFill - startFill;
+        cout << "ivestEkr: studentu sukureme " << studSk << " irasu per " << fillElapsed.count() << " s\n";
         
         studSk = validInput("Iveskite papildomu studentu skaiciu (jei nenorite prideti studentu, iveskite 0): ");
         cout << "\n";
@@ -232,9 +239,11 @@ void ivestIsFailo(vector<Studentas> &studentai, string failoKelias,  bool &klaid
     }
 
     buffer << file.rdbuf();
-
     // skip header line (if present)
     if (!getline(buffer, line)) return;
+    using std::chrono::steady_clock;
+    using std::chrono::duration;
+    auto startRead = steady_clock::now();
     while (getline(buffer, line)) {
         stringstream ss(line);
         Studentas naujasStud;
@@ -247,6 +256,9 @@ void ivestIsFailo(vector<Studentas> &studentai, string failoKelias,  bool &klaid
             return;
         }
     }
+    auto endRead = steady_clock::now();
+    duration<double> readElapsed = endRead - startRead;
+    cout << "ivestIsFailo: nuskaitymas ir push_back uztruko: " << readElapsed.count() << " s\n";
 }
 
 /**
@@ -257,11 +269,16 @@ void ivestIsFailo(vector<Studentas> &studentai, string failoKelias,  bool &klaid
 string klauskFailo(bool &klaida) {
     vector<path> failuPav;
     klaida = false;
-
     try {
+        using std::chrono::steady_clock;
+        using std::chrono::duration;
+        auto startDir = steady_clock::now();
         for (auto p: directory_iterator("ivestis")) {
             failuPav.push_back(p.path());
         }
+        auto endDir = steady_clock::now();
+        duration<double> dirElapsed = endDir - startDir;
+        cout << "klauskFailo: nuskaityti katalogo failai uztruko: " << dirElapsed.count() << " s\n";
     }
     catch (exception &e) {
         cout << "Klaida skaitant aplanka:\n" << e.what() << "\n";

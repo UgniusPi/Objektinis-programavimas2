@@ -8,6 +8,7 @@
 #include <algorithm>
 #include <iostream>
 #include <iomanip>
+#include <chrono>
 
 using std::left;
 using std::right;
@@ -78,13 +79,24 @@ std::istream& Studentas::readStudent(std::istream& is) {
 
     std::vector<int> paz;
     int val;
+    using std::chrono::steady_clock;
+    using std::chrono::duration;
+    auto t0 = steady_clock::now();
+    int pushCount = 0;
     while (iss >> val) {
         if (val < 0 || val > 10) {
             is.setstate(std::ios::failbit);
             return is;
         }
         paz.push_back(val);
+        ++pushCount;
     }
+    auto t1 = steady_clock::now();
+    duration<double> pushElapsed = t1 - t0;
+    static double total_paz_push_time = 0.0;
+    static size_t total_paz_push_count = 0;
+    total_paz_push_time += pushElapsed.count();
+    total_paz_push_count += pushCount;
 
     if (paz.empty()) {
         is.setstate(std::ios::failbit);
@@ -101,22 +113,41 @@ std::istream& Studentas::readStudent(std::istream& is) {
 }
 
 double Studentas::galBalas(int pasirink) {
+    using std::chrono::steady_clock;
+    using std::chrono::duration;
+    auto t0 = steady_clock::now();
+    double result = 0.0;
     if (pasirink == 1) {
-        if (tarp_.empty()) return (double)egz_ * 0.6;
-        double suma = 0;
-        for (int p : tarp_) suma += p;
-        double vid = suma / (double)tarp_.size();
-        return vid * 0.4 + (double)egz_ * 0.6;
+        if (tarp_.empty()) result = (double)egz_ * 0.6;
+        else {
+            double suma = 0;
+            for (int p : tarp_) suma += p;
+            double vid = suma / (double)tarp_.size();
+            result = vid * 0.4 + (double)egz_ * 0.6;
+        }
+    } else {
+        if (tarp_.empty()) result = (double)egz_ * 0.6;
+        else {
+            auto tmp = tarp_;
+            std::sort(tmp.begin(), tmp.end());
+            size_t n = tmp.size();
+            double med = 0;
+            if (n % 2 == 1) med = tmp[n/2];
+            else med = ((double)tmp[n/2] + tmp[n/2 - 1]) / 2.0;
+            result = med * 0.4 + (double)egz_ * 0.6;
+        }
     }
+    auto t1 = steady_clock::now();
+    duration<double> elapsed = t1 - t0;
+    static double total_galbal_time = 0.0;
+    static size_t total_galbal_calls = 0;
+    total_galbal_time += elapsed.count();
+    ++total_galbal_calls;
+    return result;
+}
 
-    if (tarp_.empty()) return (double)egz_ * 0.6;
-    auto tmp = tarp_;
-    std::sort(tmp.begin(), tmp.end());
-    size_t n = tmp.size();
-    double med = 0;
-    if (n % 2 == 1) med = tmp[n/2];
-    else med = ((double)tmp[n/2] + tmp[n/2 - 1]) / 2.0;
-    return med * 0.4 + (double)egz_ * 0.6;
+void printStudentTiming() {
+    std::cout << "Studentas: laiko matavimai sukaupti (detalesni duomenys spausdinami vietose):" << std::endl;
 }
 
 std::istream& operator>>(std::istream& is, Studentas& s) {

@@ -24,7 +24,6 @@ using std::chrono::duration;
  */
 int main() {
     srand(time(0));
-
     while (true) {
         vector<Studentas> studentai, vargsiukai;
         Nustatymai nustatymai;
@@ -75,9 +74,12 @@ int main() {
             isvestIFaila(studentai, nustatymai.pasirink, "galvociai.txt");
             cout << "\n\n";
         }
+        auto iter_end = high_resolution_clock::now();
     }
     
     cout << "Programa sekmingai uzsidare.";
+    // spausdiname suvestines is instrumentuotu funkciju
+    printStudentTiming();
     return 0;
 }
 

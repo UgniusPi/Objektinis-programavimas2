@@ -11,6 +11,7 @@
 #include <cstdlib>
 #include <fstream>
 #include <filesystem> 
+#include <chrono>
 #include "funkcijos.h"
 
 using std::string;
@@ -36,18 +37,29 @@ void isvestEkr(const vector<Studentas> &studentai, int pasirink) {
     
     cout << left << setw(21) << "Pavarde" << left << setw(16) << "Vardas" << left << setw(20) << galTekstas << "\n";
     cout << "---------------------------------------------------------" << "\n";
-    
+    using std::chrono::steady_clock;
+    using std::chrono::duration;
+    auto t0 = steady_clock::now();
     for (const auto &stud : studentai) {
         cout << stud << '\n';
     }
+    auto t1 = steady_clock::now();
+    duration<double> elapsed = t1 - t0;
+    cout << "isvestEkr: isvedimo iteracija uztruko: " << elapsed.count() << " s\n";
     cout << "\n\n";
 }
 
 /** @brief Apskaičiuoja ir nustato kiekvieno studento galutinį balą. */
 void skaicGal(vector<Studentas> &studentai, int pasirink) {
+    using std::chrono::steady_clock;
+    using std::chrono::duration;
+    auto t0 = steady_clock::now();
     for (auto &stud : studentai) {
         stud.setGal(stud.galBalas(pasirink));
     }
+    auto t1 = steady_clock::now();
+    duration<double> elapsed = t1 - t0;
+    cout << "skaicGal: apskaiciavimo laikas: " << elapsed.count() << " s\n";
 }
 
 /**
@@ -82,10 +94,15 @@ void isvestIFaila(const vector<Studentas> &studentai, int pasirink, string failo
 
     file << left << setw(21) << "Pavarde" << left << setw(16) << "Vardas" << left << setw(20) << galTekstas << "\n";
     file << "---------------------------------------------------------";
-    
+    using std::chrono::steady_clock;
+    using std::chrono::duration;
+    auto t0 = steady_clock::now();
     for (const auto &stud : studentai) {
         file << '\n' << stud;
     }
+    auto t1 = steady_clock::now();
+    duration<double> elapsed = t1 - t0;
+    cout << "isvestIFaila: isvedimas i faila uztruko: " << elapsed.count() << " s\n";
 }
 
 /**
@@ -122,6 +139,9 @@ string kurkFaila(int studSk, int pazSk) {
     }
     file << right << setw(10) << "Egz." << "\n"; 
 
+    using std::chrono::steady_clock;
+    using std::chrono::duration;
+    auto t0 = steady_clock::now();
     for (int i=0; i<studSk; i++) {
         file << left << setw(16) << "Vardas" + to_string(i + 1) << right << setw(16) << "Pavarde" + to_string(i + 1);
         file << setw(13) << " ";
@@ -130,14 +150,31 @@ string kurkFaila(int studSk, int pazSk) {
         }
         file << right << setw(10) << to_string(rand() % 10 + 1) << "\n";
     }
+    auto t1 = steady_clock::now();
+    duration<double> elapsed = t1 - t0;
+    cout << "kurkFaila: failo generavimas uztruko: " << elapsed.count() << " s\n";
 
     return failoKelias;
 }
 
 /** @brief Atskiria silpniausius studentus į atskirą vektorių `vargsiukai`. */
 void skirstyk(vector<Studentas> &studentai, vector<Studentas> &vargsiukai) {
+    using std::chrono::steady_clock;
+    using std::chrono::duration;
+    auto t0 = steady_clock::now();
     auto mid = std::stable_partition(studentai.begin(), studentai.end(), [](const Studentas &s){ return s.getGal() < 5; });
+    auto t1 = steady_clock::now();
+    duration<double> partElapsed = t1 - t0;
 
+    auto t2 = steady_clock::now();
     vargsiukai.assign(studentai.begin(), mid);
+    auto t3 = steady_clock::now();
+    duration<double> assignElapsed = t3 - t2;
+
+    auto t4 = steady_clock::now();
     studentai.erase(studentai.begin(), mid);
+    auto t5 = steady_clock::now();
+    duration<double> eraseElapsed = t5 - t4;
+
+    cout << "skirstyk: partition=" << partElapsed.count() << " s, assign=" << assignElapsed.count() << " s, erase=" << eraseElapsed.count() << " s\n";
 }

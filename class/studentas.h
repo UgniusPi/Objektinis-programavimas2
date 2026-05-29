@@ -78,8 +78,7 @@ public:
      * @return Galutinis balas.
      */
     double galBalas(int pasirink);
-
-    /** @brief Skaitymo operatorius. */
+    
     friend istream& operator>>(istream& is, Studentas& s);
     /** @brief Rašymo operatorius. */
     friend ostream& operator<<(ostream& os, const Studentas& s);
@@ -91,5 +90,8 @@ bool compare(const Studentas&, const Studentas&);
 bool comparePagalPavarde(const Studentas&, const Studentas&);
 /** @brief Lygina studentus pagal galutinį balą (descending). */
 bool comparePagalGal(const Studentas&, const Studentas&);
+
+/** @brief Išveda sukauptus laiko matavimo suvestinius (naudojama profiliavimui). */
+void printStudentTiming();
 
 #endif
