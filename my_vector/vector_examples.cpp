@@ -26,5 +26,22 @@ void print_test_result(const char *name, bool ok) {
 
 
 int main() {
-    
+    using mystl::Vector;
+    bool all_ok = true;
+
+    // 1) push_back, size, iteration
+    std::vector<int> sv1;
+    Vector<int> mv1;
+    sv1.push_back(1); sv1.push_back(2); sv1.push_back(3);
+    mv1.push_back(1); mv1.push_back(2); mv1.push_back(3);
+    bool t1 = equal_contents(sv1, mv1) && sv1.size() == mv1.size();
+    print_test_result("push_back / iteration / size", t1);
+    all_ok &= t1;
+
+    // 2) initializer_list, operator[] and at()
+    std::vector<std::string> sv2 = {"a","b","c"};
+    Vector<std::string> mv2 = {"a","b","c"};
+    bool t2 = (sv2[1] == mv2[1]) && (sv2.at(2) == mv2.at(2)) && equal_contents(sv2, mv2);
+    print_test_result("initializer_list / operator[] / at", t2);
+    all_ok &= t2;
 }
