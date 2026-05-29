@@ -109,4 +109,20 @@ typename Vector<T>::const_iterator Vector<T>::cbegin() const noexcept { return d
 
 template<typename T>
 typename Vector<T>::const_iterator Vector<T>::cend() const noexcept { return data_ + size_; }
+
+// Capacity
+template<typename T>
+bool Vector<T>::empty() const noexcept { return size_ == 0; }
+
+template<typename T>
+typename Vector<T>::size_type Vector<T>::size() const noexcept { return size_; }
+
+template<typename T>
+typename Vector<T>::size_type Vector<T>::capacity() const noexcept { return cap_; }
+
+template<typename T>
+void Vector<T>::reserve(size_type newCap) {
+    if (newCap <= cap_) return;
+    reallocate(newCap);
+}
 } // namespace mystl
