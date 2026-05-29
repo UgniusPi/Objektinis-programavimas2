@@ -47,5 +47,12 @@ public:
     const_iterator end() const noexcept;
     const_iterator cbegin() const noexcept;
     const_iterator cend() const noexcept;
+
+    // Capacity
+    bool empty() const noexcept;
+    size_type size() const noexcept;
+    size_type capacity() const noexcept;
+    void reserve(size_type newCap);
+    void shrink_to_fit();
 };
 } // namespace mystl
