@@ -157,4 +157,22 @@ typename Vector<T>::const_reference Vector<T>::at(size_type idx) const {
     if (idx >= size_) throw std::out_of_range("Vector::at");
     return data_[idx];
 }
+
+template<typename T>
+typename Vector<T>::reference Vector<T>::front() { return data_[0]; }
+
+template<typename T>
+typename Vector<T>::const_reference Vector<T>::front() const { return data_[0]; }
+
+template<typename T>
+typename Vector<T>::reference Vector<T>::back() { return data_[size_ - 1]; }
+
+template<typename T>
+typename Vector<T>::const_reference Vector<T>::back() const { return data_[size_ - 1]; }
+
+template<typename T>
+typename Vector<T>::pointer Vector<T>::data() noexcept { return data_; }
+
+template<typename T>
+typename Vector<T>::const_pointer Vector<T>::data() const noexcept { return data_; }
 } // namespace mystl
