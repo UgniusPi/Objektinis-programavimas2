@@ -298,4 +298,18 @@ void Vector<T>::swap(Vector& other) noexcept {
     std::swap(size_, other.size_);
     std::swap(cap_, other.cap_);
 }
+
+// Non-member comparisons
+template<typename T>
+bool operator==(const Vector<T>& a, const Vector<T>& b) {
+    if (a.size() != b.size()) return false;
+    for (typename Vector<T>::size_type i = 0; i < a.size(); ++i)
+        if (!(a.data()[i] == b.data()[i])) return false;
+    return true;
+}
+
+template<typename T>
+bool operator!=(const Vector<T>& a, const Vector<T>& b) {
+    return !(operator==(a, b));
+}
 } // namespace mystl
