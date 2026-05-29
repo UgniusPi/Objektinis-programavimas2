@@ -282,4 +282,20 @@ void Vector<T>::resize(size_type count, const T& value) {
         size_ = count;
     }
 }
+
+template<typename T>
+void Vector<T>::assign(size_type count, const T& value) {
+    clear();
+    reserve(count);
+    for (size_type i = 0; i < count; ++i)
+        new (data_ + i) T(value);
+    size_ = count;
+}
+
+template<typename T>
+void Vector<T>::swap(Vector& other) noexcept {
+    std::swap(data_, other.data_);
+    std::swap(size_, other.size_);
+    std::swap(cap_, other.cap_);
+}
 } // namespace mystl
