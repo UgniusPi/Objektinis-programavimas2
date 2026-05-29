@@ -64,4 +64,22 @@ int main() {
     bool t4 = (sv4.capacity() == mv4.capacity());
     print_test_result("reserve / capacity", t4);
     all_ok &= t4;
+
+    // 5) resize
+    std::vector<int> sv5 = {1,2,3,4,5}; Vector<int> mv5 = {1,2,3,4,5};
+    sv5.resize(3); mv5.resize(3);
+    bool t5a = equal_contents(sv5, mv5) && sv5.size() == mv5.size();
+    sv5.resize(6, 9); mv5.resize(6, 9);
+    bool t5b = equal_contents(sv5, mv5) && sv5.size() == mv5.size();
+    print_test_result("resize (smaller)", t5a);
+    print_test_result("resize (larger with value)", t5b);
+    all_ok &= (t5a && t5b);
+
+    // 6) emplace_back with struct
+    std::vector<Item> sv6; Vector<Item> mv6;
+    sv6.emplace_back(std::string("Alice"), 30); sv6.emplace_back(std::string("Bob"), 25);
+    mv6.emplace_back(std::string("Alice"), 30); mv6.emplace_back(std::string("Bob"), 25);
+    bool t6 = equal_contents(sv6, mv6);
+    print_test_result("emplace_back (construct in place)", t6);
+    all_ok &= t6;
 }
