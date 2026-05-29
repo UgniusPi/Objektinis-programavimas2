@@ -44,4 +44,24 @@ int main() {
     bool t2 = (sv2[1] == mv2[1]) && (sv2.at(2) == mv2.at(2)) && equal_contents(sv2, mv2);
     print_test_result("initializer_list / operator[] / at", t2);
     all_ok &= t2;
+
+    // 3) insert and erase
+    std::vector<int> sv3 = {1,3,4};
+    Vector<int> mv3 = {1,3,4};
+    sv3.insert(sv3.begin() + 1, 2);
+    mv3.insert(mv3.begin() + 1, 2);
+    bool t3a = equal_contents(sv3, mv3);
+    sv3.erase(sv3.begin() + 2);
+    mv3.erase(mv3.begin() + 2);
+    bool t3b = equal_contents(sv3, mv3);
+    print_test_result("insert", t3a);
+    print_test_result("erase", t3b);
+    all_ok &= (t3a && t3b);
+
+    // 4) reserve, capacity
+    std::vector<int> sv4; Vector<int> mv4;
+    sv4.reserve(16); mv4.reserve(16);
+    bool t4 = (sv4.capacity() == mv4.capacity());
+    print_test_result("reserve / capacity", t4);
+    all_ok &= t4;
 }
