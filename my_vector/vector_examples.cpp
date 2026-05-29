@@ -82,4 +82,27 @@ int main() {
     bool t6 = equal_contents(sv6, mv6);
     print_test_result("emplace_back (construct in place)", t6);
     all_ok &= t6;
+
+    // 7) copy and move
+    std::vector<int> sv7 = {1,2,3}; Vector<int> mv7 = {1,2,3};
+    std::vector<int> sv7_copy = sv7; Vector<int> mv7_copy = mv7; // copy ctor
+    bool t7a = equal_contents(sv7_copy, mv7_copy);
+    std::vector<int> sv7_move = std::move(sv7); Vector<int> mv7_move = std::move(mv7);
+    bool t7b = equal_contents(sv7_move, mv7_move);
+    print_test_result("copy constructor", t7a);
+    print_test_result("move constructor", t7b);
+    all_ok &= (t7a && t7b);
+
+    // 8) assign and swap
+    std::vector<int> sv8; Vector<int> mv8;
+    sv8.assign(4, 7); mv8.assign(4, 7);
+    bool t8a = equal_contents(sv8, mv8);
+    sv8.swap(sv7_copy); mv8.swap(mv7_copy);
+    bool t8b = equal_contents(sv8, mv8);
+    print_test_result("assign", t8a);
+    print_test_result("swap", t8b);
+    all_ok &= (t8a && t8b);
+
+    cout << (all_ok ? "ALL TESTS PASSED" : "SOME TESTS FAILED") << endl;
+    return all_ok ? 0 : 1;
 }
