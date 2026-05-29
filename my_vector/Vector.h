@@ -66,5 +66,20 @@ public:
     const_reference back() const;
     pointer data() noexcept;
     const_pointer data() const noexcept;
+
+    // Modifiers
+    void clear() noexcept;
+    void push_back(const T& value);
+    void push_back(T&& value);
+    template<class... Args>
+    void emplace_back(Args&&... args);
+    void pop_back();
+    iterator insert(const_iterator pos, const T& value);
+    iterator erase(const_iterator pos);
+    iterator erase(const_iterator first, const_iterator last);
+    void resize(size_type count);
+    void resize(size_type count, const T& value);
+    void assign(size_type count, const T& value);
+    void swap(Vector& other) noexcept;
 };
 } // namespace mystl
