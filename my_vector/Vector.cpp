@@ -238,4 +238,48 @@ typename Vector<T>::iterator Vector<T>::erase(const_iterator pos) {
     --size_;
     return data_ + idx;
 }
+
+template<typename T>
+typename Vector<T>::iterator Vector<T>::erase(const_iterator first, const_iterator last) {
+    size_type idx1 = first - data_;
+    size_type idx2 = last - data_;
+    if (idx1 >= size_ || idx1 >= idx2) return data_ + idx1;
+    size_type count = idx2 - idx1;
+    for (size_type i = 0; i < count; ++i)
+        data_[idx1 + i].~T();
+    for (size_type i = idx1; i + count < size_; ++i) {
+        new (data_ + i) T(std::move(data_[i + count]));
+        data_[i + count].~T();
+    }
+    size_ -= count;
+    return data_ + idx1;
+}
+
+template<typename T>
+void Vector<T>::resize(size_type count) {
+    if (count < size_) {
+        for (size_type i = count; i < size_; ++i)
+            data_[i].~T();
+        size_ = count;
+    } else if (count > size_) {
+        reserve(count);
+        for (size_type i = size_; i < count; ++i)
+            new (data_ + i) T();
+        size_ = count;
+    }
+}
+
+template<typename T>
+void Vector<T>::resize(size_type count, const T& value) {
+    if (count < size_) {
+        for (size_type i = count; i < size_; ++i)
+            data_[i].~T();
+        size_ = count;
+    } else if (count > size_) {
+        reserve(count);
+        for (size_type i = size_; i < count; ++i)
+            new (data_ + i) T(value);
+        size_ = count;
+    }
+}
 } // namespace mystl
