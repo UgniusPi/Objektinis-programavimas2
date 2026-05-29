@@ -37,4 +37,32 @@ Vector<T>::Vector(size_type count, const T& value) {
         new (data_ + i) T(value);
     size_ = count;
 }
+
+template<typename T>
+Vector<T>::Vector(std::initializer_list<T> il) {
+    reserve(il.size());
+    for (const T &v : il)
+        new (data_ + size_++) T(v);
+}
+
+template<typename T>
+Vector<T>::Vector(const Vector& other) {
+    reserve(other.size_);
+    for (size_type i = 0; i < other.size_; ++i)
+        new (data_ + i) T(other.data_[i]);
+    size_ = other.size_;
+}
+
+template<typename T>
+Vector<T>::Vector(Vector&& other) noexcept : data_(other.data_), size_(other.size_), cap_(other.cap_) {
+    other.data_ = nullptr;
+    other.size_ = 0;
+    other.cap_ = 0;
+}
+
+template<typename T>
+Vector<T>::~Vector() {
+    clear();
+    ::operator delete(data_);
+}
 } // namespace mystl
