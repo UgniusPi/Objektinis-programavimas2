@@ -1,0 +1,25 @@
+name: C++ CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Configure (CMake)
+      run: cmake -S class -B class/build -DCMAKE_BUILD_TYPE=Release
+
+    - name: Build
+      run: cmake --build class/build --config Release --parallel 2
+
+    - name: Run tests
+      run: ctest --test-dir class/build --output-on-failure -C Release

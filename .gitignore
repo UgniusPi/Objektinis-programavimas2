@@ -39,3 +39,41 @@
 
 # debug information files
 *.dwo
+
+# Build directories
+/build/
+/**/build/
+
+# CMake files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+install_manifest.txt
+*.ninja*
+
+# IDE / editor
+.vscode/
+.idea/
+*.suo
+*.user
+*.sln
+
+# vcpkg artifacts (do not commit installed packages)
+/vcpkg/installed/
+/vcpkg/packages/
+/vcpkg/buildtrees/
+/vcpkg/downloads/
+/vcpkg/archives/
+vcpkg/vcpkg.exe
+vcpkg/bootstrap-*
+
+# Logs and temp
+*.log
+*.tmp
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
