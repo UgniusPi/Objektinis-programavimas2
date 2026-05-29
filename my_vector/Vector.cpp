@@ -125,4 +125,17 @@ void Vector<T>::reserve(size_type newCap) {
     if (newCap <= cap_) return;
     reallocate(newCap);
 }
+
+template<typename T>
+void Vector<T>::shrink_to_fit() {
+    if (cap_ > size_) {
+        if (size_ == 0) {
+            ::operator delete(data_);
+            data_ = nullptr;
+            cap_ = 0;
+        } else {
+            reallocate(size_);
+        }
+    }
+}
 } // namespace mystl
