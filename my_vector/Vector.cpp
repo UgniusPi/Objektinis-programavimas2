@@ -312,4 +312,17 @@ template<typename T>
 bool operator!=(const Vector<T>& a, const Vector<T>& b) {
     return !(operator==(a, b));
 }
+
+// Explicit instantiations for types used in examples/tests
+template class Vector<int>;
+template bool operator==<int>(const Vector<int>&, const Vector<int>&);
+template bool operator!=<int>(const Vector<int>&, const Vector<int>&);
+
+template class Vector<std::string>;
+template bool operator==<std::string>(const Vector<std::string>&, const Vector<std::string>&);
+template bool operator!=<std::string>(const Vector<std::string>&, const Vector<std::string>&);
+
+template class Vector<Item>;
+template bool operator==<Item>(const Vector<Item>&, const Vector<Item>&);
+template bool operator!=<Item>(const Vector<Item>&, const Vector<Item>&);
 } // namespace mystl
