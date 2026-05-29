@@ -175,4 +175,33 @@ typename Vector<T>::pointer Vector<T>::data() noexcept { return data_; }
 
 template<typename T>
 typename Vector<T>::const_pointer Vector<T>::data() const noexcept { return data_; }
+
+// Modifiers
+template<typename T>
+void Vector<T>::clear() noexcept {
+    destroy_range(data_, data_ + size_);
+    size_ = 0;
+}
+
+template<typename T>
+void Vector<T>::push_back(const T& value) {
+    if (size_ == cap_) reserve(cap_ ? cap_ * 2 : 1);
+    new (data_ + size_) T(value);
+    ++size_;
+}
+
+template<typename T>
+void Vector<T>::push_back(T&& value) {
+    if (size_ == cap_) reserve(cap_ ? cap_ * 2 : 1);
+    new (data_ + size_) T(std::move(value));
+    ++size_;
+}
+
+template<typename T>
+template<class... Args>
+void Vector<T>::emplace_back(Args&&... args) {
+    if (size_ == cap_) reserve(cap_ ? cap_ * 2 : 1);
+    new (data_ + size_) T(std::forward<Args>(args)...);
+    ++size_;
+}
 } // namespace mystl
