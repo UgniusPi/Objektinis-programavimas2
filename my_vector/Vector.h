@@ -82,4 +82,12 @@ public:
     void assign(size_type count, const T& value);
     void swap(Vector& other) noexcept;
 };
+
+// Non-member comparison functions (implemented in the .cpp)
+template<typename T>
+bool operator==(const Vector<T>& a, const Vector<T>& b);
+
+template<typename T>
+bool operator!=(const Vector<T>& a, const Vector<T>& b);
+
 } // namespace mystl
