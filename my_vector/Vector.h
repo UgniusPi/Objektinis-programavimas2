@@ -5,6 +5,16 @@
 
 namespace mystl {
 
+// Example POD used in the examples. Kept here so Vector can be explicitly
+// instantiated for this type in the implementation file.
+struct Item {
+    std::string title;
+    int quantity;
+    Item() : title(""), quantity(0) {}
+    Item(std::string t, int q) : title(std::move(t)), quantity(q) {}
+    bool operator==(const Item &o) const { return title == o.title && quantity == o.quantity; }
+};
+
 template<typename T>
 class Vector {
 public:
