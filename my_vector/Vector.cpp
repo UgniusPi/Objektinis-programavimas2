@@ -65,4 +65,29 @@ Vector<T>::~Vector() {
     clear();
     ::operator delete(data_);
 }
+
+template<typename T>
+Vector<T>& Vector<T>::operator=(const Vector& other) {
+    if (this == &other) return *this;
+    clear();
+    reserve(other.size_);
+    for (size_type i = 0; i < other.size_; ++i)
+        new (data_ + i) T(other.data_[i]);
+    size_ = other.size_;
+    return *this;
+}
+
+template<typename T>
+Vector<T>& Vector<T>::operator=(Vector&& other) noexcept {
+    if (this == &other) return *this;
+    clear();
+    ::operator delete(data_);
+    data_ = other.data_;
+    size_ = other.size_;
+    cap_ = other.cap_;
+    other.data_ = nullptr;
+    other.size_ = 0;
+    other.cap_ = 0;
+    return *this;
+}
 } // namespace mystl
