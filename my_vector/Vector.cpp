@@ -325,4 +325,8 @@ template bool operator!=<std::string>(const Vector<std::string>&, const Vector<s
 template class Vector<Item>;
 template bool operator==<Item>(const Vector<Item>&, const Vector<Item>&);
 template bool operator!=<Item>(const Vector<Item>&, const Vector<Item>&);
+
+// Explicitly instantiate member-template emplace_back for the usage in examples
+template void Vector<Item>::emplace_back<std::string,int>(std::string&&, int&&);
+
 } // namespace mystl
