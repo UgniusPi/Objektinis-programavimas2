@@ -16,5 +16,16 @@ public:
     using const_pointer = const T*;
     using iterator = T*;
     using const_iterator = const T*;
+
+private:
+    pointer data_ = nullptr;
+    size_type size_ = 0;
+    size_type cap_ = 0;
+
+    // Destroy elements in range [first, last)
+    void destroy_range(pointer first, pointer last) noexcept;
+
+    // Allocate new storage and move elements
+    void reallocate(size_type newCap);
 };
 } // namespace mystl
