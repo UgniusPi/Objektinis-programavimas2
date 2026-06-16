@@ -175,3 +175,4 @@ isvestIFaila: isvedimas i faila uztruko: 3.42643 s
 isvestIFaila: isvedimas i faila uztruko: 4.77723 s
 
 
+Instaliacinis my_vector.msi failas randasi my_vector-SetupFiles aplanke.

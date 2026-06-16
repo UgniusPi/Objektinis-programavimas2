@@ -1,32 +1,29 @@
 cmake_minimum_required(VERSION 3.14)
-project(my_vector_tests LANGUAGES CXX)
+project(my_vector_app LANGUAGES CXX) # Pakeičiau pavadinimą į app
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-enable_testing()
-
-# Try to find GoogleTest (vcpkg config), otherwise fetch it via FetchContent
-find_package(GTest CONFIG QUIET)
-if (NOT GTest_FOUND)
-  include(FetchContent)
-  FetchContent_Declare(
-    googletest
-    GIT_REPOSITORY https://github.com/google/googletest.git
-    GIT_TAG main
-  )
-  # For MSVC users: avoid overriding compiler flags
-  set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-  FetchContent_MakeAvailable(googletest)
-endif()
-
-# GoogleTest for Vector implementation (tests and implementation are in this folder)
-add_executable(vector_gtest
-  test_vector_gtest.cpp
-  Vector.cpp
+# 1. Sukuriam pačią programą (pridėk savo main.cpp, jei tokį turi!)
+add_executable(mano_vektorius
+    Vector.cpp
+    input.cpp
+    output.cpp
+    studentas.cpp
+    main.cpp  # <-- Čia turėtų būti tavo pagrindinis programos failas
 )
 
-target_include_directories(vector_gtest PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
-target_link_libraries(vector_gtest PRIVATE GTest::gtest_main)
-include(GoogleTest)
-gtest_discover_tests(vector_gtest)
+target_include_directories(mano_vektorius PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+
+# ==========================================
+# CPACK KONFIGŪRACIJA (INSTALLERIS)
+# ==========================================
+
+# 2. Nurodome MSI formatą
+set(CPACK_GENERATOR "WIX")
+
+# 3. Svarbu: Pakeičiau į "mano_vektorius", kad sutaptų su add_executable!
+install(TARGETS mano_vektorius DESTINATION bin)
+
+# 4. Paleidžiame CPack
+include(CPack)
